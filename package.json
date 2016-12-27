@@ -1,0 +1,19 @@
+{
+  "name": "reactulator",
+  "version": "1.0.0",
+  "description": "calc/frankulator remade with React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashaKoro/Reactulator.git"
+  },
+  "author": "Sasha Korotkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SashaKoro/Reactulator/issues"
+  },
+  "homepage": "https://github.com/SashaKoro/Reactulator#readme"
+}
