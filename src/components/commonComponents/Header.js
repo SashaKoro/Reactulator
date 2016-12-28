@@ -1,20 +1,27 @@
 import React, {Proptypes} from 'react';
 import {Link, IndexLink} from 'react-router';
+import styled from 'styled-components';
 
-const HeaderStyle = {
-  color: "gray",
-  fontSize: "24px",
-  paddingTop: "30px"
-};
+const Nav = styled.nav`
+  color: gray;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  font-family: Arial;
+`;
 
 const Header = () => {
   return (
-    <nav style={HeaderStyle} >
+    <Nav>
       <IndexLink to="/" activeClassName="active">Calculator</IndexLink>
       {" / "}
       <Link to="/frankulator" activeClassName="active">Frankulator</Link>
-    </nav>
+    </Nav>
   );
 };
 
 export default Header;
+
+
+
+// activeClassName not necessary? Not breaking anything...

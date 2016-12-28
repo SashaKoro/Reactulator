@@ -1,18 +1,19 @@
 import React, {PropTypes, Component} from 'react';
 import Header from './commonComponents/Header';
+import styled from 'styled-components';
 
-const AppStyle = {
-  margin: "auto",
-  width: "300px"
-};
+const Div = styled.div`
+  margin: auto;
+  width: 500px;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div style={AppStyle} className="container-fluid">
+      <Div className="container-fluid">
         <Header />
         {this.props.children}
-      </div>
+      </Div>
     );
   }
 }
