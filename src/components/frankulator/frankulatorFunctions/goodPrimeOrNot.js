@@ -1,55 +1,66 @@
-function goodPrimeGenerator(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+import primeNumberOrNot from './primeNumberOrNot';
+
+const goodPrimeOrNot = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (String(x).length > 15) {
-    x = "Sorry, number is too long";
-    return x;
+
+  if (String(inputNum).length > 15) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  if (x === "") {
+
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  x = Number(x);
-  if (x < 2) {
-    x += " is NOT prime";
-    return x;
+
+  inputNum = Number(inputNum);
+  if (inputNum < 2) {
+    inputNum += " is NOT prime";
+    return inputNum;
   }
-  if (ifPrime(x).slice(-8) !== "is prime") {
-    x += " is NOT prime";
-    return x;
+
+  if (primeNumberOrNot(inputNum).slice(-8) !== "is prime") {
+    inputNum += " is NOT prime";
+    return inputNum;
   }
-  var spot = x + 1;
-  while (ifPrime(spot).slice(-8) !== "is prime") {
+
+  let spot = inputNum + 1;
+  while (primeNumberOrNot(spot).slice(-8) !== "is prime") {
     spot += 1;
   }
-  var secondSpot = spot + 1;
-  while (ifPrime(secondSpot).slice(-8) !== "is prime") {
+  let secondSpot = spot + 1;
+  while (primeNumberOrNot(secondSpot).slice(-8) !== "is prime") {
     secondSpot += 1;
   }
-  var thirdSpot = x - 1;
-  while (ifPrime(thirdSpot).slice(-8) !== "is prime") {
+  let thirdSpot = inputNum - 1;
+  while (primeNumberOrNot(thirdSpot).slice(-8) !== "is prime") {
     thirdSpot -= 1;
     if (thirdSpot == 0) {
-      x += " is a non-good prime";
-      return x;
+      inputNum += " is a non-good prime";
+      return inputNum;
     }
   }
-  var fourthSpot = thirdSpot - 1;
-  while (ifPrime(fourthSpot).slice(-8) !== "is prime") {
+  let fourthSpot = thirdSpot - 1;
+  while (primeNumberOrNot(fourthSpot).slice(-8) !== "is prime") {
     fourthSpot -= 1;
     if (fourthSpot == 0) {
-      x += " is a non-good prime";
-      return x;
+      inputNum += " is a non-good prime";
+      return inputNum;
     }
   }
-  if (x * x > spot * thirdSpot && x * x > secondSpot * fourthSpot) {
-    x += " is a good prime";
-    return x;
+  if (inputNum * inputNum > spot * thirdSpot && inputNum * inputNum > secondSpot * fourthSpot) {
+    inputNum += " is a good prime";
+    return inputNum;
   }
-  x += " is a non-good prime";
-  return x;
-}
+  inputNum += " is a non-good prime";
+  return inputNum;
+};
+
+export default goodPrimeOrNot;

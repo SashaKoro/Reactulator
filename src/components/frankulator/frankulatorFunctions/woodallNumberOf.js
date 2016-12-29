@@ -1,14 +1,17 @@
-function woodallGenerator(inputnum) {
-  if (/[a-z]/i.test(inputnum) === true || inputnum === ".") {
-    inputnum = "";
+const woodallNumberOf = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (inputnum === "") {
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (/\./.test(inputnum) === true) {
-    inputnum = "Number must be an Integer";
-    return inputnum;
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  inputnum = Number(inputnum);
-  return inputnum * Math.pow(2, inputnum) - 1;
-}
+  inputNum = Number(inputNum);
+  return inputNum * Math.pow(2, inputNum) - 1;
+};
+
+export default woodallNumberOf;

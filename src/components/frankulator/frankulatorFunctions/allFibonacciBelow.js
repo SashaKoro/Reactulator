@@ -1,24 +1,30 @@
-function fibGenerator(x) {
-  if ( /[a-z]/i.test(x) === true || x === ".") {
-    if (/\+/.test(x) != true) {
-      x = "";
+const allFibonacciBelow = function(inputNum) {
+
+  if ( /[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    if (/\+/.test(inputNum) !== true) {
+      inputNum = "";
     }
   }
-  if (x === "") {
+
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  x = Number(x);
+  inputNum = Number(inputNum);
 
-  if (x === 1 || x === 0) {
+  if (inputNum === 1 || inputNum === 0) {
     return 0;
   }
-  var firstFib = 1;
-  var secondFib = 0;
-  var fib_Sum = 0;
-  while (firstFib + secondFib < x) {
+
+  let firstFib = 1;
+  let secondFib = 0;
+  let fib_Sum = 0;
+
+  while (firstFib + secondFib < inputNum) {
     firstFib += secondFib;
     secondFib = (firstFib - secondFib);
     fib_Sum += firstFib;
   }
   return fib_Sum + 1;
-}
+};
+
+export default allFibonacciBelow;

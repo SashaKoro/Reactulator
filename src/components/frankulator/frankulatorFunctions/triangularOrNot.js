@@ -1,27 +1,30 @@
-function triangularNumberGenerator(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+const triangularOrNot = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (x === "") {
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  if (String(x).length > 12) {
-    x = "Sorry, number is too long";
-    return x;
+  if (String(inputNum).length > 12) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  x = Number(x);
-  var triNum = 1;
-  var triAdd = 2;
-  while (x != triNum) {
-    if (triNum > x) {
-      return x + " is NOT tri";
+  inputNum = Number(inputNum);
+  let triNum = 1;
+  let triAdd = 2;
+  while (inputNum != triNum) {
+    if (triNum > inputNum) {
+      return inputNum + " is NOT tri";
     }
     triNum += triAdd;
     triAdd += 1;
   }
-  return x + " is a tri number";
-}
+  return inputNum + " is a tri number";
+};
+
+export default triangularOrNot;

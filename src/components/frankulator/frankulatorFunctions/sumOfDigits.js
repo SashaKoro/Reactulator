@@ -1,17 +1,19 @@
-function digitSumCounter(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+const sumOfDigits = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (x === "") {
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  x = Number(x);
-  var dig_Sum = 0;
-  var z = 0;
-  for (var i = 0; i < (String(x).length); i ++) {
-    if (String(x).charAt(i) != ".") {
-      dig_Sum += parseInt(String(x).charAt(i));
+  inputNum = Number(inputNum);
+  let dig_Sum = 0;
+  for (let i = 0; i < (String(inputNum).length); i ++) {
+    if (String(inputNum).charAt(i) != ".") {
+      dig_Sum += parseInt(String(inputNum).charAt(i));
     }
   }
   return dig_Sum;
-}
+};
+
+export default sumOfDigits;

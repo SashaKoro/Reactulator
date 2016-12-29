@@ -1,32 +1,38 @@
-function largestPrimeFactorSearch(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+import primeNumberOrNot from './primeNumberOrNot';
+
+const largestPrimeFactor = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (String(x).length > 15) {
-    x = "Sorry, number is too long";
-    return x;
+  if (String(inputNum).length > 15) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  if (x === "") {
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  x = Number(x);
-  var lastLargest = "No prime factor";
-  var k = 2;
-  while (k <= x / k) {
-    if (x % k === 0) {
-      var otherFac = (x / k);
-      if (ifPrime(k).slice(-8) === "is prime") {
+  inputNum = Number(inputNum);
+
+  let lastLargest = "No prime factor";
+  let k = 2;
+  while (k <= inputNum / k) {
+    if (inputNum % k === 0) {
+      let otherFactor = (inputNum / k);
+      if (primeNumberOrNot(k).slice(-8) === "is prime") {
         lastLargest = k;
       }
-      if (ifPrime(otherFac).slice(-8) === "is prime") {
-        lastLargest = otherFac;
+      if (primeNumberOrNot(otherFactor).slice(-8) === "is prime") {
+        lastLargest = otherFactor;
       }
     }
     k += 1;
   }
   return lastLargest;
-}
+};
+
+export default largestPrimeFactor;

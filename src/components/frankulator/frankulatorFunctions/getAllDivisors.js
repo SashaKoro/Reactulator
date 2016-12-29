@@ -1,32 +1,40 @@
-function divisorCounter(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+const getAllDivisors = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (String(x).length > 16) {
-    x = "Sorry, number is too long";
-    return x;
+
+  if (String(inputNum).length > 16) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  if (x === "") {
+
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  x = Number(x);
-  if (x === 0) {
+
+  inputNum = Number(inputNum);
+  if (inputNum === 0) {
     return "infinite number of divisors";
   }
-  var m = 1;
-  var divCount = 0;
-  while (m <= x/m) {
-    if (x % m == 0) {
-      if(m * m == x) {
-        divCount -= 1;
+
+  let potentialDivisor = 1;
+  let divisorCount = 0;
+  while (potentialDivisor <= inputNum/potentialDivisor) {
+    if (inputNum % potentialDivisor === 0) {
+      if(potentialDivisor * potentialDivisor === inputNum) {
+        divisorCount -= 1;
       }
-      divCount += 2;
+      divisorCount += 2;
     }
-    m += 1;
+    potentialDivisor += 1;
   }
-  return divCount;
-}
+  return divisorCount;
+};
+
+export default getAllDivisors;

@@ -1,36 +1,41 @@
-function semiPrimeGenerator(x) {
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+import primeNumberOrNot from './primeNumberOrNot';
+
+const semiPrimeOrNot = function(inputNum) {
+
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (x === "") {
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (String(x).length > 12) {
-    x = "Sorry, number is too long";
-    return x;
+  if (String(inputNum).length > 12) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  x = Number(x);
-  if (x < 4) {
-    x += " is NOT a semiprime";
-    return x;
+  inputNum = Number(inputNum);
+  if (inputNum < 4) {
+    inputNum += " is NOT a semiprime";
+    return inputNum;
   }
-  var firstFactor = 1;
-  while (firstFactor <= x / firstFactor) {
-    if (ifPrime(firstFactor).slice(-8) === "is prime") {
-      if (x % firstFactor === 0) {
-        var otherFactor = (x / firstFactor);
-        if(ifPrime(otherFactor).slice(-8) === "is prime") {
-          x += " is a semiprime";
-          return x;
+  let firstFactor = 1;
+  while (firstFactor <= inputNum / firstFactor) {
+    if (primeNumberOrNot(firstFactor).slice(-8) === "is prime") {
+      if (inputNum % firstFactor === 0) {
+        let otherFactor = (inputNum / firstFactor);
+        if(primeNumberOrNot(otherFactor).slice(-8) === "is prime") {
+          inputNum += " is a semiprime";
+          return inputNum;
         }
       }
     }
     firstFactor += 1;
   }
-  x += " is NOT a semiprime";
-  return x;
-}
+  inputNum += " is NOT a semiprime";
+  return inputNum;
+};
+
+export default semiPrimeOrNot;

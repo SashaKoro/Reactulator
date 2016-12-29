@@ -1,31 +1,44 @@
-function chenPrimeGenerator(x) {
-  if (/[a-z]/i.test(x) === true || x === ".") {
-    x = "";
+import primeNumberOrNot from './primeNumberOrNot';
+import semiPrimeOrNot from './semiPrimeOrNot';
+
+const chenPrimeOrNot = function(inputNum) {
+
+  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
+    inputNum = "";
   }
-  if (String(x).length > 13) {
-    x = "Sorry, number is too long";
-    return x;
+
+  if (String(inputNum).length > 13) {
+    inputNum = "Sorry, number is too long";
+    return inputNum;
   }
-  if (x === "") {
+
+  if (inputNum === "") {
     return "Please enter a number";
   }
-  if (/\./.test(x) === true) {
-    x = "Number must be an Integer";
-    return x;
+
+  if (/\./.test(inputNum) === true) {
+    inputNum = "Number must be an Integer";
+    return inputNum;
   }
-  x = Number(x);
-  if (x < 2) {
-    x += " is NOT prime";
-    return x;
+
+  inputNum = Number(inputNum);
+
+  if (inputNum < 2) {
+    inputNum += " is NOT prime";
+    return inputNum;
   }
-  if (ifPrime(x).slice(-8) === "is prime") {
-    if (ifPrime(x + 2).slice(-8) === "is prime" || semiPrimeGenerator(x + 2).slice(-14) === "is a semiprime") {
-      x += " is a chenprime";
-      return x;
+
+  if (primeNumberOrNot(inputNum).slice(-8) === "is prime") {
+    if (primeNumberOrNot(inputNum + 2).slice(-8) === "is prime" || semiPrimeOrNot(inputNum + 2).slice(-14) === "is a semiprime") {
+      inputNum += " is a chenprime";
+      return inputNum;
     }
-    x += " is a non-chen prime";
-    return x;
+    inputNum += " is a non-chen prime";
+    return inputNum;
   }
-  x += " is NOT prime";
-  return x;
-}
+
+  inputNum += " is NOT prime";
+  return inputNum;
+};
+
+export default chenPrimeOrNot;
