@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -13,14 +13,12 @@ const H1 = styled.h1`
   font-family: "Courier";
 `;
 
-class FrankulatorHeader extends Component {
-  render(){
-    return (
-      <Div>
-        <H1>Frankulator</H1>
-      </Div>
-    );
-  }
-}
+const FrankulatorHeader = () => {
+  return (
+    <Div>
+      <H1>Frankulator</H1>
+    </Div>
+  );
+};
 
 export default FrankulatorHeader;

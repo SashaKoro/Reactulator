@@ -5,8 +5,6 @@ import CalculatorOutput from './CalculatorOutput';
 import CalculatorClearbuttons from './CalculatorClearbuttons';
 import CalculatorSmallbuttons from './CalculatorSmallbuttons';
 
-//Class at the top of component to enable hot-reloading (needs parent class)
-
 const Div = styled.div`
   width: 300px;
   height: 420px;
@@ -19,17 +17,37 @@ const Div = styled.div`
   resize: both;
 `;
 
+
 class Calculator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      theOutput: '',
+      impliedOverWrite: 'no'
+    };
+  }
+
+
   render() {
     return (
       <Div>
         <CalculatorHeader />
-        <CalculatorOutput />
-        <CalculatorClearbuttons />
-        <CalculatorSmallbuttons />
+        <CalculatorOutput theOutput={this.state.theOutput} />
+        <CalculatorClearbuttons
+          theOutput={this.state.theOutput}
+          impliedOverWrite={this.state.impliedOverWrite}
+          newOutputState={(theOutput) => this.setState({theOutput})} />
+        <CalculatorSmallbuttons
+          impliedOverWrite={this.state.impliedOverWrite}
+          newOutputState={(theOutput, impliedOverWrite) => this.setState({theOutput: theOutput, impliedOverWrite: 'no'})}
+          newOutputStateOverWrite={(theOutput, impliedOverWrite) => this.setState({theOutput: theOutput, impliedOverWrite: 'maybe'})}
+          theOutput={this.state.theOutput} />
       </Div>
     );
   }
 }
+
+
 
 export default Calculator;

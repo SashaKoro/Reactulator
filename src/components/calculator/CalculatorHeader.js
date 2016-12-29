@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -13,14 +13,12 @@ const H1 = styled.h1`
   marginLeft: 20px;
 `;
 
-class CalculatorHeader extends Component {
-  render() {
-    return (
-      <Div>
-        <H1>Calculator</H1>
-      </Div>
-    );
-  }
-}
+const CalculatorHeader = () => {
+  return (
+    <Div>
+      <H1>Calculator</H1>
+    </Div>
+  );
+};
 
 export default CalculatorHeader;

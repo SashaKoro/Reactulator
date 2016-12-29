@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import inputCheck from './calculatorFunctions/inputCheck';
+import Evaluate from './calculatorFunctions/Evaluate';
+import stateCheck from './calculatorFunctions/stateCheck';
 
 const Div = styled.div`
   height: 68%;
@@ -45,37 +48,35 @@ const EqualButton = styled(Button)`
   }
 `;
 
-class CalculatorSmallbuttons extends Component {
-  render(){
-    return (
-      <Div>
-        <InnerDiv>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>/</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>x</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>-</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>0</Button>
-          <Button>.</Button>
-          <EqualButton>=</EqualButton>
-          <Button>+</Button>
-        </InnerDiv>
-      </Div>
-    );
-  }
-}
+const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, newOutputStateOverWrite}) => {
+  return (
+    <Div>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '7', impliedOverWrite))} >7</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '8', impliedOverWrite))} >8</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '9', impliedOverWrite))} >9</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, ' / ', impliedOverWrite))} >/</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '4', impliedOverWrite))} >4</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '5', impliedOverWrite))} >5</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '6', impliedOverWrite))} >6</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, ' * ', impliedOverWrite))} >x</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '1', impliedOverWrite))} >1</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '2', impliedOverWrite))} >2</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '3', impliedOverWrite))} >3</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, ' - ', impliedOverWrite))} >-</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '0', impliedOverWrite))} >0</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '.', impliedOverWrite))} >.</Button>
+        <EqualButton onClick={() => newOutputStateOverWrite(Evaluate(theOutput))} >=</EqualButton>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, ' + ', impliedOverWrite))} >+</Button>
+      </InnerDiv>
+    </Div>
+  );
+};
 
 export default CalculatorSmallbuttons;

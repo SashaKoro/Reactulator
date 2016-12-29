@@ -6,7 +6,8 @@ const Div = styled.div`
   line-height: 45px;
 `;
 
-const P = styled.div`
+const Output = styled.output`
+  color: black;
    width: 85%;
    height: 80%;
    background-color: white;
@@ -23,7 +24,7 @@ class FrankulatorOutput extends Component {
   render() {
     return(
       <Div>
-        <P>Output Here!</P>
+        <Output>Output Here!</Output>
       </Div>
     );
   }

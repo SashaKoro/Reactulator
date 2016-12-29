@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import ClearLast from './calculatorFunctions/ClearLast';
+import inputCheck from './calculatorFunctions/inputCheck';
 
 const Div = styled.div`
   height: 12%;
@@ -40,15 +42,13 @@ const Lastbutton = styled(Allbutton)`
   }
 `;
 
-class CalculatorClearbuttons extends Component {
-  render() {
-    return (
-      <Div>
-        <Allbutton>Clear All</Allbutton>
-        <Lastbutton>Clear Last</Lastbutton>
-      </Div>
-    );
-  }
-}
+const CalculatorClearbuttons = ({newOutputState, theOutput}) => {
+  return (
+    <Div>
+      <Allbutton onClick={() => newOutputState('')} >Clear All</Allbutton>
+      <Lastbutton onClick={() => newOutputState(ClearLast(theOutput))}>Clear Last</Lastbutton>
+    </Div>
+  );
+};
 
 export default CalculatorClearbuttons;
