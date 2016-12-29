@@ -18,13 +18,28 @@ const Div = styled.div`
 `;
 
 class Frankulator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      theOutput: '',
+      overWrite: 'no'
+    };
+  }
+
   render() {
     return (
       <Div>
         <FrankulatorHeader />
-        <FrankulatorOutput />
-        <FrankulatorClearbuttons />
-        <FrankulatorSmallbuttons />
+        <FrankulatorOutput theOutput={this.state.theOutput} />
+        <FrankulatorClearbuttons
+          theOutput={this.state.theOutput}
+          newOutputState={theOutput => this.setState({theOutput})} />
+        <FrankulatorSmallbuttons
+          overWrite={this.state.overWrite}
+          newOutputState={(theOutput, overWrite) => this.setState({theOutput: theOutput, overWrite: 'no'})}
+          newOutputStateOverWrite={(theOutput, overWrite) => this.setState({theOutput: theOutput, overWrite: 'yes'})}
+          theOutput={this.state.theOutput} />
       </Div>
     );
   }

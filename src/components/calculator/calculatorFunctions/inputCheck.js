@@ -2,7 +2,7 @@ const inputCheck = function(output, val, overwrite) {
 
   output = output.toString();
 
-  //document.getElementById("calc").style.background = "rgb(198, 254, 202)";
+  // Clear error
 
   if (overwrite === 'maybe') {
     if ((val != " + " && val != " - " && val != " / " && val != " * ") && output.slice(-1) != " ") {
@@ -25,10 +25,10 @@ const inputCheck = function(output, val, overwrite) {
     output = output.slice(0, -1);
   }
 
-  if (String(output).length > 21) {
+  if (output.length > 21) {
     val = "";
     output = "";
-   // document.getElementById("calc").style.background = "rgb(255, 25, 0)";
+   // Throw error
   }
 
   output += val;

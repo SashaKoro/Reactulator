@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import inputCheck from './calculatorFunctions/inputCheck';
 import Evaluate from './calculatorFunctions/Evaluate';
-import stateCheck from './calculatorFunctions/stateCheck';
+// import stateCheck from './calculatorFunctions/stateCheck';
 
 const Div = styled.div`
   height: 68%;

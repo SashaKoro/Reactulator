@@ -46,7 +46,7 @@ const CalculatorClearbuttons = ({newOutputState, theOutput}) => {
   return (
     <Div>
       <Allbutton onClick={() => newOutputState('')} >Clear All</Allbutton>
-      <Lastbutton onClick={() => newOutputState(ClearLast(theOutput))}>Clear Last</Lastbutton>
+      <Lastbutton onClick={() => newOutputState(ClearLast(theOutput))} >Clear Last</Lastbutton>
     </Div>
   );
 };

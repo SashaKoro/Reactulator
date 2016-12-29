@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import ClearLast from './frankulatorFunctions/ClearLast';
 
 const Div = styled.div`
   height: 50px;
@@ -33,15 +34,13 @@ const Button = styled.button`
   }
 `;
 
-class FrankulatorClearbuttons extends Component {
-  render(){
-    return(
-      <Div>
-        <Button>Clear All</Button>
-        <Button>Clear Last</Button>
-      </Div>
-    );
-  }
-}
+const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
+  return(
+    <Div>
+      <Button onClick={() => newOutputState('')} >Clear All</Button>
+      <Button onClick={() => newOutputState(ClearLast(theOutput))} >Clear Last</Button>
+    </Div>
+  );
+};
 
 export default FrankulatorClearbuttons;

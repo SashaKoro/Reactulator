@@ -1,7 +1,9 @@
 const ClearLast = function(output) {
 
   output = output.toString();
-  //document.getElementById("calc").style.background = "rgb(198, 254, 202)";
+
+  //Clear error here
+
   if (output.slice(-1) === " ") {
     output = output.slice(0, -3);
   }

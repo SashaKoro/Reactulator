@@ -20,14 +20,12 @@ const Output = styled.output`
    border-color: black;
 `;
 
-class FrankulatorOutput extends Component {
-  render() {
-    return(
-      <Div>
-        <Output>Output Here!</Output>
-      </Div>
-    );
-  }
-}
+const FrankulatorOutput = ({theOutput}) => {
+  return(
+    <Div>
+      <Output>{theOutput}</Output>
+    </Div>
+  );
+};
 
 export default FrankulatorOutput;

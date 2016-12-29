@@ -36,8 +36,7 @@ class Calculator extends Component {
         <CalculatorOutput theOutput={this.state.theOutput} />
         <CalculatorClearbuttons
           theOutput={this.state.theOutput}
-          impliedOverWrite={this.state.impliedOverWrite}
-          newOutputState={(theOutput) => this.setState({theOutput})} />
+          newOutputState={theOutput => this.setState({theOutput})} />
         <CalculatorSmallbuttons
           impliedOverWrite={this.state.impliedOverWrite}
           newOutputState={(theOutput, impliedOverWrite) => this.setState({theOutput: theOutput, impliedOverWrite: 'no'})}

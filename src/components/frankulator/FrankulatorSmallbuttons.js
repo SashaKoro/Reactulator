@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import inputCheck from './frankulatorFunctions/inputCheck';
 
 const InnerDiv = styled.div`
   height: 50px;
@@ -32,54 +33,46 @@ const Button = styled.button`
   }
 `;
 
-class FrankulatorSmallbuttons extends Component {
-  render() {
-    return(
-      <div>
-        <InnerDiv>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>sqRt</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>x^2</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>n!</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>0</Button>
-          <Button>.</Button>
-          <Button>%</Button>
-          <Button>D_S</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>P?</Button>
-          <Button>L_P</Button>
-          <Button>S_P</Button>
-          <Button>T?</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>DvC</Button>
-          <Button>F_S</Button>
-          <Button>C_C</Button>
-          <Button>SeP</Button>
-        </InnerDiv>
-        <InnerDiv>
-          <Button>C_P</Button>
-          <Button>G_P</Button>
-          <Button>W_N</Button>
-        </InnerDiv>
-      </div>
-    );
-  }
-}
+const FrankulatorSmallbuttons = ({overWrite, theOutput, newOutputState, newOutputStateOverWrite}) => {
+  return(
+    <div>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '7', overWrite))} >7</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '8', overWrite))} >8</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '9', overWrite))} >9</Button>
+        <Button>P?</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '4', overWrite))} >4</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '5', overWrite))} >5</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '6', overWrite))} >6</Button>
+        <Button>L_P</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '1', overWrite))} >1</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '2', overWrite))} >2</Button>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '3', overWrite))} >3</Button>
+        <Button>n!</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button onClick={() => newOutputState(inputCheck(theOutput, '0', overWrite))} >0</Button>
+        <Button>S_P</Button>
+        <Button>T?</Button>
+        <Button>D_S</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button>DvC</Button>
+        <Button>F_S</Button>
+        <Button>C_C</Button>
+        <Button>SeP</Button>
+      </InnerDiv>
+      <InnerDiv>
+        <Button>C_P</Button>
+        <Button>G_P</Button>
+        <Button>W_N</Button>
+      </InnerDiv>
+    </div>
+  );
+};
 
 export default FrankulatorSmallbuttons;
