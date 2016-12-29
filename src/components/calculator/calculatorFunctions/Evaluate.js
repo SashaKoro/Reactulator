@@ -17,6 +17,6 @@ const Evaluate = function(output) {
     }
     return output;
   }
-}
+};
 
 export default Evaluate;
