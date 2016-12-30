@@ -1,11 +1,10 @@
-const triangularOrNot = function(inputNum) {
+const triangularOrNot = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     return inputNum;
   }
 
-  let triNum = 1;
-  let triAdd = 2;
+  let triNum = 1, triAdd = 2;
   while (inputNum != triNum) {
     if (triNum > inputNum) {
       return inputNum + " is NOT tri";

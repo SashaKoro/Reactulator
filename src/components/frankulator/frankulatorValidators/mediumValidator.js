@@ -1,4 +1,4 @@
-const mediumValidator = function(inputNum) {
+const mediumValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     inputNum = "";

@@ -1,4 +1,4 @@
-const inputCheck = function(output, val, overwrite) {
+const inputCheck = (output, val, overwrite) => {
 
   output = output.toString();
 

@@ -1,4 +1,4 @@
-const getAllDivisors = function(inputNum) {
+const getAllDivisors = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     return inputNum;
@@ -8,8 +8,7 @@ const getAllDivisors = function(inputNum) {
     return "infinite number of divisors";
   }
 
-  let potentialDivisor = 1;
-  let divisorCount = 0;
+  let potentialDivisor = 1, divisorCount = 0;
   while (potentialDivisor <= inputNum/potentialDivisor) {
     if (inputNum % potentialDivisor === 0) {
       if(potentialDivisor * potentialDivisor === inputNum) {

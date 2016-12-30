@@ -1,4 +1,4 @@
-const ClearLast = function(output) {
+const ClearLast = output => {
 
   output = output.toString();
   output = output.slice(0, -1);

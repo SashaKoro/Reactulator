@@ -1,4 +1,4 @@
-const ClearLast = function(output) {
+const ClearLast = output => {
 
   output = output.toString();
 
@@ -6,8 +6,7 @@ const ClearLast = function(output) {
 
   if (output.slice(-1) === " ") {
     output = output.slice(0, -3);
-  }
-  else {
+  } else {
     output = output.slice(0, -1);
   }
   return output;

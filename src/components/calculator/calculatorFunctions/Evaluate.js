@@ -1,4 +1,4 @@
-const Evaluate = function(output) {
+const Evaluate = output => {
 
   output = output.toString();
 

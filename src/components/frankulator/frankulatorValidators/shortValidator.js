@@ -1,4 +1,4 @@
-const shortValidator = function(inputNum) {
+const shortValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     inputNum = "";

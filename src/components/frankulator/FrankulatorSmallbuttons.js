@@ -60,7 +60,7 @@ const FrankulatorSmallbuttons = ({overWrite, theOutput, newOutputState, newOutpu
         <Button onClick={() => newOutputState(inputValidator(theOutput, '7', overWrite))} >7</Button>
         <Button onClick={() => newOutputState(inputValidator(theOutput, '8', overWrite))} >8</Button>
         <Button onClick={() => newOutputState(inputValidator(theOutput, '9', overWrite))} >9</Button>
-        <Button onClick={() => newOutputStateOverWrite(primeNumberOrNot(theOutput))}>P?</Button>
+        <Button onClick={() => newOutputStateOverWrite(primeNumberOrNot(mediumValidator(theOutput)))}>P?</Button>
       </InnerDiv>
       <InnerDiv>
         <Button onClick={() => newOutputState(inputValidator(theOutput, '4', overWrite))} >4</Button>

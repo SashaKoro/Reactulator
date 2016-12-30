@@ -1,4 +1,4 @@
-const factorial = function(inputNum) {
+const factorial = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     return inputNum;
@@ -10,6 +10,7 @@ const factorial = function(inputNum) {
   if (inputNum === 0) {
     return 1;
   }
+
   let i = (inputNum - 1);
   while (i > 1) {
     inputNum *= i;

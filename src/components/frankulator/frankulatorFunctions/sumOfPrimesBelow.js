@@ -1,29 +1,30 @@
 import primeNumberOrNot from './primeNumberOrNot';
 
-const sumOfPrimeBelow = function(inputNum) {
+const sumOfPrimeBelow = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     return inputNum;
   }
 
   if (String(inputNum).length > 6) {
-    inputNum = "Sorry, number is too long";
-    return inputNum;
+    return inputNum = "Sorry, number is too long";
   }
 
   if (inputNum < 3) {
     return 0;
   }
-  let sumOfPrimes = 0;
-  let i = 3;
-  while (i < inputNum) {
-    if (primeNumberOrNot(i).slice(-8) === "is prime") {
-      sumOfPrimes += i;
+  let sumOfPrimes = 0, possiblePrime = 3;
+  while (possiblePrime < inputNum) {
+    let itIsPrime = primeNumberOrNot(possiblePrime).slice(-8) === "is prime";
+
+    if (itIsPrime) {
+      sumOfPrimes += possiblePrime;
     }
-    i += 2;
+    possiblePrime += 2;
   }
-  sumOfPrimes += 2;
-  return sumOfPrimes;
+
+  return sumOfPrimes += 2;
+
 };
 
 export default sumOfPrimeBelow;

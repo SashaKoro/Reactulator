@@ -1,4 +1,4 @@
-const allFibonacciBelow = function(inputNum) {
+const allFibonacciBelow = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     return inputNum;
@@ -10,14 +10,14 @@ const allFibonacciBelow = function(inputNum) {
 
   let firstFib = 1;
   let secondFib = 0;
-  let fibonacciSum = 0;
+  let SumOfFibonacciNums = 0;
 
   while (firstFib + secondFib < inputNum) {
     firstFib += secondFib;
     secondFib = (firstFib - secondFib);
-    fibonacciSum += firstFib;
+    SumOfFibonacciNums += firstFib;
   }
-  return fibonacciSum + 1;
+  return SumOfFibonacciNums + 1;
 };
 
 export default allFibonacciBelow;

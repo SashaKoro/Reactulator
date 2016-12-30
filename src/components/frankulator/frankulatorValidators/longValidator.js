@@ -1,4 +1,4 @@
-const longValidator = function(inputNum) {
+const longValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     if (/\+/.test(inputNum) !== true) {

@@ -1,4 +1,4 @@
-const standardValidator = function(inputNum) {
+const standardValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     inputNum = "";
