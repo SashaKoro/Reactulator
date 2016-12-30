@@ -2,20 +2,6 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const semiPrimeOrNot = function(inputNum) {
 
-  if (/\./.test(inputNum) === true) {
-    inputNum = "Number must be an Integer";
-    return inputNum;
-  }
-  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
-    inputNum = "";
-  }
-  if (inputNum === "") {
-    return "Please enter a number";
-  }
-  if (String(inputNum).length > 12) {
-    inputNum = "Sorry, number is too long";
-    return inputNum;
-  }
   inputNum = Number(inputNum);
   if (inputNum < 4) {
     inputNum += " is NOT a semiprime";

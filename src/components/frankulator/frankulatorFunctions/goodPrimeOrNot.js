@@ -2,25 +2,6 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const goodPrimeOrNot = function(inputNum) {
 
-  if (/[a-z]/i.test(inputNum) === true || inputNum === ".") {
-    inputNum = "";
-  }
-
-  if (String(inputNum).length > 15) {
-    inputNum = "Sorry, number is too long";
-    return inputNum;
-  }
-
-  if (inputNum === "") {
-    return "Please enter a number";
-  }
-
-  if (/\./.test(inputNum) === true) {
-    inputNum = "Number must be an Integer";
-    return inputNum;
-  }
-
-  inputNum = Number(inputNum);
   if (inputNum < 2) {
     inputNum += " is NOT prime";
     return inputNum;

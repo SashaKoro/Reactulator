@@ -1,4 +1,4 @@
-const inputCheck = function(output, val, overwrite) {
+const inputValidator = function(output, val, overwrite) {
 
   output = output.toString();
 
@@ -26,4 +26,4 @@ const inputCheck = function(output, val, overwrite) {
   return output;
 };
 
-export default inputCheck;
+export default inputValidator;

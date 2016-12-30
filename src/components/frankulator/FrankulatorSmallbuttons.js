@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import inputCheck from './frankulatorFunctions/inputCheck';
 import allFibonacciBelow from './frankulatorFunctions/allFibonacciBelow';
 import chenPrimeOrNot from './frankulatorFunctions/chenPrimeOrNot';
 import collatzStepCount from './frankulatorFunctions/collatzStepCount';
@@ -14,6 +13,14 @@ import sumOfPrimesBelow from './frankulatorFunctions/sumOfPrimesBelow';
 import triangularOrNot from './frankulatorFunctions/triangularOrNot';
 import woodallNumberOf from './frankulatorFunctions/woodallNumberOf';
 import factorial from './frankulatorFunctions/factorial';
+
+import inputValidator from './frankulatorValidators/inputValidator';
+import longValidator from './frankulatorValidators/longValidator';
+import mediumValidator from './frankulatorValidators/mediumValidator';
+import shortValidator from './frankulatorValidators/shortValidator';
+import standardValidator from './frankulatorValidators/standardValidator';
+
+
 
 const InnerDiv = styled.div`
   height: 50px;
@@ -50,39 +57,39 @@ const FrankulatorSmallbuttons = ({overWrite, theOutput, newOutputState, newOutpu
   return(
     <div>
       <InnerDiv>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '7', overWrite))} >7</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '8', overWrite))} >8</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '9', overWrite))} >9</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '7', overWrite))} >7</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '8', overWrite))} >8</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '9', overWrite))} >9</Button>
         <Button onClick={() => newOutputStateOverWrite(primeNumberOrNot(theOutput))}>P?</Button>
       </InnerDiv>
       <InnerDiv>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '4', overWrite))} >4</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '5', overWrite))} >5</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '6', overWrite))} >6</Button>
-        <Button onClick={() => newOutputStateOverWrite(largestPrimeFactor(theOutput))}>L_P</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '4', overWrite))} >4</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '5', overWrite))} >5</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '6', overWrite))} >6</Button>
+        <Button onClick={() => newOutputStateOverWrite(largestPrimeFactor(mediumValidator(theOutput)))}>L_P</Button>
       </InnerDiv>
       <InnerDiv>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '1', overWrite))} >1</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '2', overWrite))} >2</Button>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '3', overWrite))} >3</Button>
-        <Button onClick={() => newOutputStateOverWrite(factorial(theOutput))}>n!</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '1', overWrite))} >1</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '2', overWrite))} >2</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '3', overWrite))} >3</Button>
+        <Button onClick={() => newOutputStateOverWrite(factorial(standardValidator(theOutput)))}>n!</Button>
       </InnerDiv>
       <InnerDiv>
-        <Button onClick={() => newOutputState(inputCheck(theOutput, '0', overWrite))} >0</Button>
-        <Button onClick={() => newOutputStateOverWrite(sumOfPrimesBelow(theOutput))}>S_P</Button>
-        <Button onClick={() => newOutputStateOverWrite(triangularOrNot(theOutput))}>T?</Button>
-        <Button onClick={() => newOutputStateOverWrite(sumOfDigits(theOutput))}>D_S</Button>
+        <Button onClick={() => newOutputState(inputValidator(theOutput, '0', overWrite))} >0</Button>
+        <Button onClick={() => newOutputStateOverWrite(sumOfPrimesBelow(standardValidator(theOutput)))}>S_P</Button>
+        <Button onClick={() => newOutputStateOverWrite(triangularOrNot(shortValidator(theOutput)))}>T?</Button>
+        <Button onClick={() => newOutputStateOverWrite(sumOfDigits(standardValidator(theOutput)))}>D_S</Button>
       </InnerDiv>
       <InnerDiv>
-        <Button onClick={() => newOutputStateOverWrite(getAllDivisors(theOutput))}>DvC</Button>
-        <Button onClick={() => newOutputStateOverWrite(allFibonacciBelow(theOutput))}>F_S</Button>
-        <Button onClick={() => newOutputStateOverWrite(collatzStepCount(theOutput))}>C_C</Button>
-        <Button onClick={() => newOutputStateOverWrite(semiPrimeOrNot(theOutput))}>SeP</Button>
+        <Button onClick={() => newOutputStateOverWrite(getAllDivisors(mediumValidator(theOutput)))}>DvC</Button>
+        <Button onClick={() => newOutputStateOverWrite(allFibonacciBelow(longValidator(theOutput)))}>F_S</Button>
+        <Button onClick={() => newOutputStateOverWrite(collatzStepCount(longValidator(theOutput)))}>C_C</Button>
+        <Button onClick={() => newOutputStateOverWrite(semiPrimeOrNot(shortValidator(theOutput)))}>SeP</Button>
       </InnerDiv>
       <InnerDiv>
-        <Button onClick={() => newOutputStateOverWrite(chenPrimeOrNot(theOutput))}>C_P</Button>
-        <Button onClick={() => newOutputStateOverWrite(goodPrimeOrNot(theOutput))}>G_P</Button>
-        <Button onClick={() => newOutputStateOverWrite(woodallNumberOf(theOutput))}>W_N</Button>
+        <Button onClick={() => newOutputStateOverWrite(chenPrimeOrNot(shortValidator(theOutput)))}>C_P</Button>
+        <Button onClick={() => newOutputStateOverWrite(goodPrimeOrNot(mediumValidator(theOutput)))}>G_P</Button>
+        <Button onClick={() => newOutputStateOverWrite(woodallNumberOf(longValidator(theOutput)))}>W_N</Button>
       </InnerDiv>
     </div>
   );
