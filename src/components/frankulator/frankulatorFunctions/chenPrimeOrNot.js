@@ -3,6 +3,10 @@ import semiPrimeOrNot from './semiPrimeOrNot';
 
 const chenPrimeOrNot = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (inputNum < 2) {
     inputNum += " is NOT prime";
     return inputNum;

@@ -2,6 +2,10 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const semiPrimeOrNot = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   inputNum = Number(inputNum);
   if (inputNum < 4) {
     inputNum += " is NOT a semiprime";

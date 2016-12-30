@@ -2,6 +2,10 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const goodPrimeOrNot = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (inputNum < 2) {
     inputNum += " is NOT prime";
     return inputNum;

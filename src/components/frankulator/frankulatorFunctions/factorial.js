@@ -1,5 +1,8 @@
 const factorial = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
   if (String(inputNum).length > 3) {
     return "Infinity";
   }

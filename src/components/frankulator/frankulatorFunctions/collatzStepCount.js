@@ -1,5 +1,9 @@
 const collatzStepCount = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (inputNum === 0) {
     return "Input must be a positive integer";
   }

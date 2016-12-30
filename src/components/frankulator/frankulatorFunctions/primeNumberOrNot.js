@@ -1,5 +1,9 @@
 const primeNumberOrNot = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (inputNum === 2 || inputNum === 3) {
     inputNum += " is prime";
     return inputNum;

@@ -1,5 +1,9 @@
 const allFibonacciBelow = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (inputNum === 1 || inputNum === 0) {
     return 0;
   }

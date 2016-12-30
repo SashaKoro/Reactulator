@@ -2,6 +2,10 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const largestPrimeFactor = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   let lastLargest = "No prime factor";
   let k = 2;
   while (k <= inputNum / k) {

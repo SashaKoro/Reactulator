@@ -2,6 +2,10 @@ import primeNumberOrNot from './primeNumberOrNot';
 
 const sumOfPrimeBelow = function(inputNum) {
 
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
+
   if (String(inputNum).length > 6) {
     inputNum = "Sorry, number is too long";
     return inputNum;
