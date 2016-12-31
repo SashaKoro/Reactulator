@@ -12,10 +12,10 @@ const semiPrimeOrNot = inputNum => {
   }
   let firstFactor = 1;
   while (firstFactor <= inputNum / firstFactor) {
-    if (primeNumberOrNot(firstFactor).slice(-8) === "is prime") {
+    if (primeNumberOrNot(firstFactor).endsWith("is prime")) {
       if (inputNum % firstFactor === 0) {
         let otherFactor = (inputNum / firstFactor);
-        if(primeNumberOrNot(otherFactor).slice(-8) === "is prime") {
+        if(primeNumberOrNot(otherFactor).endsWith("is prime")) {
           return inputNum += " is a semiprime";
         }
       }

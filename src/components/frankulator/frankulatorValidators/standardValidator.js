@@ -4,7 +4,7 @@ const standardValidator = inputNum => {
     inputNum = "";
   }
 
-  if (inputNum === "") {
+  if (Object.is(inputNum, "")) {
     return "Please enter a number";
   }
 

@@ -4,7 +4,9 @@ const ClearLast = output => {
 
   //Clear error here
 
-  if (output.slice(-1) === " ") {
+  const lastInputIsOperator = (output.endsWith(" "));
+
+  if (lastInputIsOperator) {
     output = output.slice(0, -3);
   } else {
     output = output.slice(0, -1);

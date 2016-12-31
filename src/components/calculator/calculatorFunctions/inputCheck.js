@@ -4,24 +4,24 @@ const inputCheck = (output, val, overwrite) => {
 
   // Clear error
 
-  if (overwrite === 'maybe') {
-    if ((val != " + " && val != " - " && val != " / " && val != " * ") && output.slice(-1) != " ") {
+  if (Object.is(overwrite, 'maybe')) {
+    if (!val.endsWith(" ") && !output.endsWith(" ")) {
       output = "";
     }
   }
 
-  if ((val == " + " || val == " - " || val == " / " || val == " * ") && output.slice(-1) == " ") {
+  if (val.endsWith(" ") && output.endsWith(" ")) {
     output = output.slice(0, -3);
   }
 
-  if (val == "." && output.slice(-1) == ".") {
+  if (val === "." && output.endsWith(".")) {
     output = output.slice(0, -1);
   }
 
-  if (/^0$/.test(output) == true && (val != "." && val != " / " && val != " * " && val != " - " && val != " + ")) {
+  if (/^0$/.test(output) && (val !== "." && !val.endsWith(" "))) {
     output = "";
   }
-  if (output.slice(-2) == " 0" && (val != "." && val != " / " && val != " * " && val != " - " && val != " + ")) {
+  if (output.endsWith(" 0") && (val !== "." && !val.endsWith(" "))) {
     output = output.slice(0, -1);
   }
 
@@ -31,8 +31,7 @@ const inputCheck = (output, val, overwrite) => {
    // Throw error
   }
 
-  output += val;
-  return output;
+  return output + val;
 };
 
 export default inputCheck;

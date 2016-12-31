@@ -2,12 +2,12 @@ const inputValidator = (output, val, overwrite) => {
 
   output = output.toString();
 
-  if (overwrite === "yes") {
+  if (Object.is(overwrite, "yes")) {
     output = "";
     //overWriteFrank = "";
   }
 
-  if(/^0$/.test(output) == true) {
+  if(/^0$/.test(output)) {
     output = "";
   }
 

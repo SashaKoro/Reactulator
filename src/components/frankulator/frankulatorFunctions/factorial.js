@@ -7,7 +7,7 @@ const factorial = inputNum => {
     return "Infinity";
   }
 
-  if (inputNum === 0) {
+  if (Object.is(inputNum, 0)) {
     return 1;
   }
 

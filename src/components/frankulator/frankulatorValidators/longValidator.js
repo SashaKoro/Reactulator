@@ -1,11 +1,11 @@
 const longValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
-    if (/\+/.test(inputNum) !== true) {
+    if (!/\+/.test(inputNum)) {
       inputNum = "";
     }
   }
-  if (inputNum === "") {
+  if (Object.is(inputNum, "")) {
     return "Please enter a number";
   }
 

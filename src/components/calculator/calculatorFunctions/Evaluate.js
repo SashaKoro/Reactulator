@@ -2,17 +2,17 @@ const Evaluate = output => {
 
   output = output.toString();
 
-  if (output.slice(-1) === " " || output.slice(1, 2) == "/" || output.slice(1, 2) == "*" || output.slice(0,2) == ". " || output.slice(-2) == " ."  || / \. /.test(output) == true) {
+  if (output.endsWith(" ") || output.startsWith(" /") || output.startsWith(" *") || output.startsWith(". ") || output.endsWith(" .")  || / \. /.test(output)) {
     // Throw error here
     return output;
   }
-  if (output == "0 / 0") {
+  if (output === "0 / 0") {
     output = Infinity;
     return output;
   }
-  if (output != "") {
+  if (output !== "") {
     output = eval(output);
-    if (isNaN(output) === true) {
+    if (Object.is(output, NaN)) {
       output = Infinity;
     }
     return output;

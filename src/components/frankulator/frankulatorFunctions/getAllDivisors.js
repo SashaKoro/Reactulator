@@ -4,7 +4,7 @@ const getAllDivisors = inputNum => {
     return inputNum;
   }
 
-  if (inputNum === 0) {
+  if (Object.is(inputNum, 0)) {
     return "infinite number of divisors";
   }
 

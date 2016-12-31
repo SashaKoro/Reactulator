@@ -11,13 +11,13 @@ const largestPrimeFactor = inputNum => {
 
     if (inputNum % possibleFactor === 0) {
 
-      let otherFactor = (inputNum / possibleFactor);
+      let largerFactor = (inputNum / possibleFactor);
 
-      if (primeNumberOrNot(possibleFactor).slice(-8) === "is prime") {
+      if (primeNumberOrNot(possibleFactor).endsWith("is prime")) {
         lastLargest = possibleFactor;
       }
-      if (primeNumberOrNot(otherFactor).slice(-8) === "is prime") {
-        lastLargest = otherFactor;
+      if (primeNumberOrNot(largerFactor).endsWith("is prime")) {
+        lastLargest = largerFactor;
       }
     }
     possibleFactor += 1;

@@ -15,7 +15,7 @@ const sumOfPrimeBelow = inputNum => {
   }
   let sumOfPrimes = 0, possiblePrime = 3;
   while (possiblePrime < inputNum) {
-    let itIsPrime = primeNumberOrNot(possiblePrime).slice(-8) === "is prime";
+    let itIsPrime = primeNumberOrNot(possiblePrime).endsWith("is prime");
 
     if (itIsPrime) {
       sumOfPrimes += possiblePrime;

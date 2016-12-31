@@ -11,8 +11,8 @@ const chenPrimeOrNot = inputNum => {
     return inputNum += " is NOT prime";
   }
 
-  if (primeNumberOrNot(inputNum).slice(-8) === "is prime") {
-    if (primeNumberOrNot(inputNum + 2).slice(-8) === "is prime" || semiPrimeOrNot(inputNum + 2).slice(-14) === "is a semiprime") {
+  if (primeNumberOrNot(inputNum).endsWith("is prime")) {
+    if (primeNumberOrNot(inputNum + 2).endsWith("is prime") || semiPrimeOrNot(inputNum + 2).endsWith("is a semiprime")) {
       return inputNum += " is a chenprime";
     }
     return inputNum += " is a non-chen prime";
