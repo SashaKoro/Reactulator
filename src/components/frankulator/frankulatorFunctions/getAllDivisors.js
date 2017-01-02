@@ -11,7 +11,7 @@ const getAllDivisors = inputNum => {
   let potentialDivisor = 1, divisorCount = 0;
   while (potentialDivisor <= inputNum/potentialDivisor) {
     if (inputNum % potentialDivisor === 0) {
-      if(potentialDivisor * potentialDivisor === inputNum) {
+      if(Math.pow(potentialDivisor, 2) === inputNum) {
         divisorCount -= 1;
       }
       divisorCount += 2;

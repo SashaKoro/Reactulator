@@ -43,10 +43,15 @@ const Lastbutton = styled(Allbutton)`
 `;
 
 const CalculatorClearbuttons = ({newOutputState, theOutput}) => {
+
+  const eraseAllInput = () => newOutputState('');
+
+  const clearLast = () => newOutputState(ClearLast(theOutput));
+
   return (
     <Div>
-      <Allbutton onClick={() => newOutputState('')} >Clear All</Allbutton>
-      <Lastbutton onClick={() => newOutputState(ClearLast(theOutput))} >Clear Last</Lastbutton>
+      <Allbutton onClick={eraseAllInput} >Clear All</Allbutton>
+      <Lastbutton onClick={clearLast} >Clear Last</Lastbutton>
     </Div>
   );
 };

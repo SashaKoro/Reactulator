@@ -23,7 +23,7 @@ const goodPrimeOrNot = inputNum => {
   let thirdSpot = inputNum - 1;
   while (primeNumberOrNot(thirdSpot).endsWith("NOT prime")) {
     thirdSpot -= 1;
-    if (thirdSpot == 0) {
+    if (Object.is(thirdSpot, 0)) {
       return inputNum += " is a non-good prime";
     }
   }
@@ -31,12 +31,12 @@ const goodPrimeOrNot = inputNum => {
   let fourthSpot = thirdSpot - 1;
   while (primeNumberOrNot(fourthSpot).endsWith("NOT prime")) {
     fourthSpot -= 1;
-    if (fourthSpot == 0) {
+    if (Object.is(fourthSpot, 0)) {
       return inputNum += " is a non-good prime";
     }
   }
 
-  if (inputNum * inputNum > spot * thirdSpot && inputNum * inputNum > secondSpot * fourthSpot) {
+  if (Math.pow(inputNum, 2) > spot * thirdSpot && Math.pow(inputNum, 2) > secondSpot * fourthSpot) {
     return inputNum += " is a good prime";
   } else {
     return inputNum += " is a non-good prime";

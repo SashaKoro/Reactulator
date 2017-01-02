@@ -9,8 +9,8 @@ const collatzStepCount = inputNum => {
   }
 
   let stepCount = 0;
-  while (inputNum != 1) {
-    if (inputNum % 2 == 0) {
+  while (inputNum !== 1) {
+    if (inputNum % 2 === 0) {
       inputNum /= 2;
     } else {
       inputNum = (inputNum * 3) + 1;

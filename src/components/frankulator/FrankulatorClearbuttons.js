@@ -35,10 +35,14 @@ const Button = styled.button`
 `;
 
 const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
+
+  const eraseAllInput = () => newOutputState('');
+
+  const clearLast = () => newOutputState(ClearLast(theOutput));
   return(
     <Div>
-      <Button onClick={() => newOutputState('')} >Clear All</Button>
-      <Button onClick={() => newOutputState(ClearLast(theOutput))} >Clear Last</Button>
+      <Button onClick={eraseAllInput} >Clear All</Button>
+      <Button onClick={clearLast} >Clear Last</Button>
     </Div>
   );
 };
