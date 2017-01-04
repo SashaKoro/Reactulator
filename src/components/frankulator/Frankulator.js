@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import styled from 'styled-components';
 import FrankulatorHeader from './FrankulatorHeader';
 import FrankulatorOutput from './FrankulatorOutput';
@@ -31,11 +31,11 @@ class Frankulator extends Component {
   render() {
     const Cleared = theOutput => this.setState({theOutput});
 
-    const newValueAdded = (theOutput, overWrite) =>
-      this.setState({theOutput: theOutput, overWrite: 'no'});
+    const newValueAdded = theOutput =>
+      this.setState({theOutput, overWrite: 'no'});
 
-    const Frankulate = (theOutput, overWrite) =>
-      this.setState({theOutput: theOutput, overWrite: 'yes'});
+    const Frankulate = theOutput =>
+      this.setState({theOutput, overWrite: 'yes'});
 
     return (
       <Div>

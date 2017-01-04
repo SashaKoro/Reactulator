@@ -31,13 +31,13 @@ class Calculator extends Component {
 
   render() {
 
-    const Cleared = (theOutput) => this.setState({theOutput});
+    const Cleared = theOutput => this.setState({theOutput});
 
-    const NewValueAdded = (theOutput, impliedOverWrite) =>
-      this.setState({theOutput: theOutput, impliedOverWrite: 'no'});
+    const NewValueAdded = theOutput =>
+      this.setState({theOutput, impliedOverWrite: 'no'});
 
-    const EvaluateInput = (theOutput, impliedOverWrite) =>
-      this.setState({theOutput: theOutput, impliedOverWrite: 'maybe'});
+    const EvaluateInput = theOutput =>
+      this.setState({theOutput, impliedOverWrite: 'maybe'});
 
     return (
       <Div>
