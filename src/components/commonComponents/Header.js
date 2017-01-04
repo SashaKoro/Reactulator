@@ -1,4 +1,4 @@
-import React, {Proptypes} from 'react';
+import React from 'react';
 import {Link, IndexLink} from 'react-router';
 import styled from 'styled-components';
 
@@ -13,15 +13,12 @@ const Nav = styled.nav`
 const Header = () => {
   return (
     <Nav>
-      <IndexLink to="/" activeClassName="active">Calculator</IndexLink>
+      <IndexLink to="/">Calculator</IndexLink>
       {" / "}
-      <Link to="/frankulator" activeClassName="active">Frankulator</Link>
+      <Link to="/frankulator">Frankulator</Link>
     </Nav>
   );
 };
 
 export default Header;
 
-
-
-// activeClassName not necessary? Not breaking anything...

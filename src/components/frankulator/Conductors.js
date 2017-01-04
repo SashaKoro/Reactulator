@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-
 const LeftConductor = styled.span`
   background-color: gray;
   float: left;
@@ -20,7 +18,6 @@ const RightConductor = styled(LeftConductor)`
   -webkit-border-radius: 0 5px 5px 0;
   boxShadow: 5px 8px 3px black;
 `;
-
 
 const Conductors = () => {
   return (

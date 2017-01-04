@@ -20,8 +20,6 @@ import mediumValidator from './frankulatorValidators/mediumValidator';
 import shortValidator from './frankulatorValidators/shortValidator';
 import standardValidator from './frankulatorValidators/standardValidator';
 
-
-
 const InnerDiv = styled.div`
   height: 50px;
 `;

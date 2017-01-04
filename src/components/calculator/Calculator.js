@@ -17,7 +17,6 @@ const Div = styled.div`
   resize: both;
 `;
 
-
 class Calculator extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +26,6 @@ class Calculator extends Component {
       impliedOverWrite: 'no'
     };
   }
-
 
   render() {
 
@@ -56,7 +54,5 @@ class Calculator extends Component {
     );
   }
 }
-
-
 
 export default Calculator;
