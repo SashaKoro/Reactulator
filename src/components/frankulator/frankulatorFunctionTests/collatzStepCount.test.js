@@ -1,21 +1,20 @@
 import collatzStepCount from '../frankulatorFunctions/collatzStepCount';
 import expect from 'expect';
 
-describe(collatzStepCount, function() {
-  this.timeout(200);
-  it('expects 0 to not be a positive integer', function() {
+describe('collatzStepCount', () => {
+  it('expects 0 to not be a positive integer', () => {
     expect(collatzStepCount(0)).toEqual("Input must be a positive integer");
   });
-  it('expects 1 to have a collatz chain of 0 steps', function() {
+  it('expects 1 to have a collatz chain of 0 steps', () => {
     expect(collatzStepCount(1)).toEqual(0);
   });
-  it('expects 2 to have a collatz chain of 1 step', function() {
+  it('expects 2 to have a collatz chain of 1 step', () => {
     expect(collatzStepCount(2)).toEqual(1);
   });
-  it('expects 13 to have a collatz chain of 9 steps', function() {
+  it('expects 13 to have a collatz chain of 9 steps', () => {
     expect(collatzStepCount(13)).toEqual(9);
   });
-  it('expects 837799 to have a collatz chain of 524 steps', function() {
+  it('expects 837799 to have a collatz chain of 524 steps', () => {
     expect(collatzStepCount(837799)).toEqual(524);
   });
 });
