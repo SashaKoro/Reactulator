@@ -8,12 +8,10 @@ const mediumValidator = inputNum => {
   }
 
   if (String(inputNum).length > 15) {
-    inputNum = "Sorry, number is too long";
-    return inputNum;
+    return "Sorry, number is too long";
   }
 
-  inputNum = Number(inputNum);
-  return inputNum;
+  return Number(inputNum);
 
 };
 

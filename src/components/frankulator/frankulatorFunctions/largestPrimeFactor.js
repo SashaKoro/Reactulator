@@ -20,7 +20,7 @@ const largestPrimeFactor = inputNum => {
         lastLargest = largerFactor;
       }
     }
-    possibleFactor += 1;
+    possibleFactor ++;
   }
   return lastLargest;
 };

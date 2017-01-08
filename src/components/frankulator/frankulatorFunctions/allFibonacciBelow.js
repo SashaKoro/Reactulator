@@ -4,8 +4,10 @@ const allFibonacciBelow = inputNum => {
     return inputNum;
   }
 
-  if (inputNum === 1 || inputNum === 0) {
-    return 0;
+  switch(inputNum){
+    case 0:
+    case 1:
+      return 0;
   }
 
   let firstFib = 1;

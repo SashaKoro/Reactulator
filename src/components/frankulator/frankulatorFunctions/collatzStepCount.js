@@ -1,11 +1,10 @@
 const collatzStepCount = inputNum => {
 
-  if (/[a-z]/i.test(inputNum)) {
-    return inputNum;
-  }
-
-  if (Object.is(inputNum, 0)) {
-    return "Input must be a positive integer";
+  switch(true){
+    case (/[a-z]/i.test(inputNum)):
+      return inputNum;
+    case inputNum === 0:
+      return "Input must be a positive integer";
   }
 
   let stepCount = 0;
@@ -15,7 +14,7 @@ const collatzStepCount = inputNum => {
     } else {
       inputNum = (inputNum * 3) + 1;
     }
-    stepCount += 1;
+    stepCount ++;
   }
   return stepCount;
 };

@@ -2,14 +2,18 @@ const Evaluate = output => {
 
   output = output.toString();
 
-  if (output.endsWith(" ") || output.startsWith(" /") || output.startsWith(" *") || output.startsWith(". ") || output.endsWith(" .")  || / \. /.test(output)) {
-    // Throw error here
-    return output;
+  switch(true){
+    case output.endsWith(" "):
+    case output.startsWith(" /"):
+    case output.startsWith(" *"):
+    case output.startsWith(". "):
+    case output.endsWith(" ."):
+    case / \. /.test(output):
+      return output;
+    case output === "0 / 0":
+      return Infinity;
   }
-  if (output === "0 / 0") {
-    output = Infinity;
-    return output;
-  }
+
   if (output !== "") {
     output = eval(output);
     if (Object.is(output, NaN)) {

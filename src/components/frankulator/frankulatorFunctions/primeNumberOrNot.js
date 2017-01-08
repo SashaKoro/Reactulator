@@ -4,11 +4,14 @@ const primeNumberOrNot = inputNum => {
     return inputNum;
   }
 
-  if (inputNum === 2 || inputNum === 3) {
-    return inputNum += " is prime";
+  switch(inputNum){
+    case 2:
+    case 3:
+      return inputNum + " is prime";
   }
+
   if (inputNum === 1 || inputNum % 2 === 0) {
-    return inputNum += " is NOT prime";
+    return inputNum + " is NOT prime";
   }
 
 
@@ -16,11 +19,11 @@ const primeNumberOrNot = inputNum => {
   while (possibleFactor <= (inputNum / possibleFactor)) {
     let itsAFactor = inputNum % possibleFactor === 0;
     if (itsAFactor) {
-      return inputNum += " is NOT prime";
+      return inputNum + " is NOT prime";
     }
     possibleFactor += 2;
   }
-  return inputNum += " is prime";
+  return inputNum + " is prime";
 };
 
 export default primeNumberOrNot;

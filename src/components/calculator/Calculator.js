@@ -23,7 +23,7 @@ export default class Calculator extends Component {
 
     this.state = {
       theOutput: '',
-      impliedOverWrite: 'no'
+      impliedOverWrite: false
     };
   }
 
@@ -31,10 +31,10 @@ export default class Calculator extends Component {
     this.setState({theOutput});
   }
   NewValueAdded(theOutput){
-    this.setState({theOutput, impliedOverWrite: 'no'});
+    this.setState({theOutput, impliedOverWrite: false});
   }
   EvaluateInput(theOutput) {
-    this.setState({theOutput, impliedOverWrite: 'maybe'});
+    this.setState({theOutput, impliedOverWrite: true});
   }
 
   render() {

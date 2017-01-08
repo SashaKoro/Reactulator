@@ -24,7 +24,7 @@ export default class Frankulator extends Component {
 
     this.state = {
       theOutput: '',
-      overWrite: 'no'
+      overWrite: false
     };
   }
 
@@ -32,10 +32,10 @@ export default class Frankulator extends Component {
     this.setState({theOutput});
   }
   newValueAdded(theOutput){
-    this.setState({theOutput, overWrite: 'no'});
+    this.setState({theOutput, overWrite: false});
   }
   Frankulate(theOutput){
-    this.setState({theOutput, overWrite: 'yes'});
+    this.setState({theOutput, overWrite: true});
   }
 
   render() {

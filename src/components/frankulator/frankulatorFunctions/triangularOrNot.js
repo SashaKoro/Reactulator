@@ -5,12 +5,12 @@ const triangularOrNot = inputNum => {
   }
 
   let triNum = 1, triAdd = 2;
-  while (inputNum != triNum) {
+  while (inputNum !== triNum) {
     if (triNum > inputNum) {
       return inputNum + " is NOT tri";
     }
     triNum += triAdd;
-    triAdd += 1;
+    triAdd ++;
   }
   return inputNum + " is a tri number";
 };

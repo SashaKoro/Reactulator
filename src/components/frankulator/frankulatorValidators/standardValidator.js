@@ -4,12 +4,11 @@ const standardValidator = inputNum => {
     inputNum = "";
   }
 
-  if (Object.is(inputNum, "")) {
+  if (inputNum === "") {
     return "Please enter a number";
   }
 
-  inputNum = Number(inputNum);
-  return inputNum;
+  return Number(inputNum);
 
 };
 
