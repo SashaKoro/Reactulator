@@ -15,7 +15,7 @@ const H1 = styled.h1`
 
 const CalculatorHeader = () => {
   return (
-    <Div>
+    <Div className="CalculatorHeader">
       <H1>Calculator</H1>
     </Div>
   );

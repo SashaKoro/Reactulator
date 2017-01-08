@@ -10,6 +10,8 @@ const primeNumberOrNot = inputNum => {
   if (inputNum === 1 || inputNum % 2 === 0) {
     return inputNum += " is NOT prime";
   }
+
+
   let possibleFactor = 3;
   while (possibleFactor <= (inputNum / possibleFactor)) {
     let itsAFactor = inputNum % possibleFactor === 0;

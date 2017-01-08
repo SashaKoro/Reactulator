@@ -18,7 +18,7 @@ const Div = styled.div`
   text-align: center;
 `;
 
-class Frankulator extends Component {
+export default class Frankulator extends Component {
   constructor(props) {
     super(props);
 
@@ -28,31 +28,33 @@ class Frankulator extends Component {
     };
   }
 
+  Cleared(theOutput){
+    this.setState({theOutput});
+  }
+  newValueAdded(theOutput){
+    this.setState({theOutput, overWrite: 'no'});
+  }
+  Frankulate(theOutput){
+    this.setState({theOutput, overWrite: 'yes'});
+  }
+
   render() {
-    const Cleared = theOutput => this.setState({theOutput});
-
-    const newValueAdded = theOutput =>
-      this.setState({theOutput, overWrite: 'no'});
-
-    const Frankulate = theOutput =>
-      this.setState({theOutput, overWrite: 'yes'});
 
     return (
       <Div>
         <FrankulatorHeader />
-        <FrankulatorOutput theOutput={this.state.theOutput} />
+        <FrankulatorOutput
+          theOutput={this.state.theOutput} />
         <FrankulatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={Cleared} />
+          newOutputState={this.Cleared.bind(this)} />
         <FrankulatorSmallbuttons
-          overWrite={this.state.overWrite}
-          newOutputState={newValueAdded}
-          newOutputStateOverWrite={Frankulate}
-          theOutput={this.state.theOutput} />
+          theOutput={this.state.theOutput}
+          newOutputState={this.newValueAdded.bind(this)}
+          newOutputStateOverWrite={this.Frankulate.bind(this)}
+          overWrite={this.state.overWrite} />
         <Conductors />
       </Div>
     );
   }
 }
-
-export default Frankulator;

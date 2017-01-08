@@ -4,7 +4,6 @@ const inputValidator = (output, val, overwrite) => {
 
   if (Object.is(overwrite, "yes")) {
     output = "";
-    //overWriteFrank = "";
   }
 
   if(/^0$/.test(output)) {

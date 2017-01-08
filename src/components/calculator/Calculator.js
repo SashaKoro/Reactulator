@@ -17,7 +17,7 @@ const Div = styled.div`
   resize: both;
 `;
 
-class Calculator extends Component {
+export default class Calculator extends Component {
   constructor(props) {
     super(props);
 
@@ -27,16 +27,17 @@ class Calculator extends Component {
     };
   }
 
+  Cleared(theOutput){
+    this.setState({theOutput});
+  }
+  NewValueAdded(theOutput){
+    this.setState({theOutput, impliedOverWrite: 'no'});
+  }
+  EvaluateInput(theOutput) {
+    this.setState({theOutput, impliedOverWrite: 'maybe'});
+  }
+
   render() {
-
-    const Cleared = theOutput => this.setState({theOutput});
-
-    const NewValueAdded = theOutput =>
-      this.setState({theOutput, impliedOverWrite: 'no'});
-
-    const EvaluateInput = theOutput =>
-      this.setState({theOutput, impliedOverWrite: 'maybe'});
-
     return (
       <Div>
         <CalculatorHeader />
@@ -44,15 +45,14 @@ class Calculator extends Component {
           theOutput={this.state.theOutput} />
         <CalculatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={Cleared} />
+          newOutputState={this.Cleared.bind(this)} />
         <CalculatorSmallbuttons
-          impliedOverWrite={this.state.impliedOverWrite}
-          newOutputState={NewValueAdded}
-          newOutputStateOverWrite={EvaluateInput}
-          theOutput={this.state.theOutput} />
+          theOutput={this.state.theOutput}
+          newOutputState={this.NewValueAdded.bind(this)}
+          newOutputStateOverWrite={this.EvaluateInput.bind(this)}
+          impliedOverWrite={this.state.impliedOverWrite} />
       </Div>
     );
   }
 }
 
-export default Calculator;

@@ -51,6 +51,7 @@ const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, ne
 
   const sevenAdd = () =>
     newOutputState(inputCheck(theOutput, '7', impliedOverWrite));
+
   const eightAdd = () =>
     newOutputState(inputCheck(theOutput, '8', impliedOverWrite));
   const nineAdd = () =>
