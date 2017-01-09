@@ -26,6 +26,10 @@ export default class Frankulator extends Component {
       theOutput: '',
       overWrite: false
     };
+
+    this.Cleared = this.Cleared.bind(this);
+    this.newValueAdded = this.newValueAdded.bind(this);
+    this.Frankulate = this.Frankulate.bind(this);
   }
 
   Cleared(theOutput){
@@ -47,11 +51,11 @@ export default class Frankulator extends Component {
           theOutput={this.state.theOutput} />
         <FrankulatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.Cleared.bind(this)} />
+          newOutputState={this.Cleared} />
         <FrankulatorSmallbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.newValueAdded.bind(this)}
-          newOutputStateOverWrite={this.Frankulate.bind(this)}
+          newOutputState={this.newValueAdded}
+          newOutputStateOverWrite={this.Frankulate}
           overWrite={this.state.overWrite} />
         <Conductors />
       </Div>

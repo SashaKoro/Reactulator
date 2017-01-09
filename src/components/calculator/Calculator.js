@@ -25,6 +25,10 @@ export default class Calculator extends Component {
       theOutput: '',
       impliedOverWrite: false
     };
+
+    this.Cleared = this.Cleared.bind(this);
+    this.NewValueAdded = this.NewValueAdded.bind(this);
+    this.EvaluateInput = this.EvaluateInput.bind(this);
   }
 
   Cleared(theOutput){
@@ -45,11 +49,11 @@ export default class Calculator extends Component {
           theOutput={this.state.theOutput} />
         <CalculatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.Cleared.bind(this)} />
+          newOutputState={this.Cleared} />
         <CalculatorSmallbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.NewValueAdded.bind(this)}
-          newOutputStateOverWrite={this.EvaluateInput.bind(this)}
+          newOutputState={this.NewValueAdded}
+          newOutputStateOverWrite={this.EvaluateInput}
           impliedOverWrite={this.state.impliedOverWrite} />
       </Div>
     );
