@@ -1,3 +1,5 @@
+import * as is from '../stringConstants/stringConstants';
+
 const standardValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
@@ -5,7 +7,7 @@ const standardValidator = inputNum => {
   }
 
   if (inputNum === "") {
-    return "Please enter a number";
+    return is.ENTER_A_NUMBER;
   }
 
   return Number(inputNum);

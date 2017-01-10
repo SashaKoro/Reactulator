@@ -1,10 +1,12 @@
+import * as has from "../stringConstants/stringConstants";
+
 const getAllDivisors = inputNum => {
 
   switch(true){
     case /[a-z]/i.test(inputNum):
       return inputNum;
     case inputNum === 0:
-      return "infinite number of divisors";
+      return has.INFINITE_NUM_DIVISORS;
   }
 
   let potentialDivisor = 1, divisorCount = 0;

@@ -10,9 +10,7 @@ const allFibonacciBelow = inputNum => {
       return 0;
   }
 
-  let firstFib = 1;
-  let secondFib = 0;
-  let SumOfFibonacciNums = 0;
+  let firstFib = 1, secondFib = 0, SumOfFibonacciNums = 0;
 
   while (firstFib + secondFib < inputNum) {
     firstFib += secondFib;

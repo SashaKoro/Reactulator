@@ -1,14 +1,16 @@
+import * as is from '../stringConstants/stringConstants';
+
 const shortValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) {
     inputNum = "";
   }
   if (inputNum === "") {
-    return "Please enter a number";
+    return is.ENTER_A_NUMBER;
   }
 
   if (String(inputNum).length > 12) {
-    return "Sorry, number is too long";
+    return is.TOO_LONG;
   }
 
   return Number(inputNum);

@@ -1,3 +1,5 @@
+import * as is from '../stringConstants/stringConstants';
+
 const longValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum) && !/\+/.test(inputNum)) {
@@ -5,7 +7,7 @@ const longValidator = inputNum => {
   }
 
   if (inputNum === "") {
-    return "Please enter a number";
+    return is.ENTER_A_NUMBER;
   }
 
   return Number(inputNum);

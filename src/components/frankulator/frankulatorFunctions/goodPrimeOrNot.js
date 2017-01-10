@@ -1,44 +1,45 @@
 import primeNumberOrNot from './primeNumberOrNot';
+import * as is from '../stringConstants/stringConstants';
 
 const goodPrimeOrNot = inputNum => {
 
   switch(true){
     case /[a-z]/i.test(inputNum):
       return inputNum;
-    case primeNumberOrNot(inputNum).endsWith("NOT prime"):
-      return inputNum + " is NOT prime";
+    case primeNumberOrNot(inputNum).endsWith(is.NOT_PRIME):
+      return inputNum + is.NOT_PRIME;
   }
 
   let spot = inputNum + 1;
-  while (primeNumberOrNot(spot).endsWith("NOT prime")) {
+  while (primeNumberOrNot(spot).endsWith(is.NOT_PRIME)) {
     spot ++;
   }
 
   let secondSpot = spot + 1;
-  while (primeNumberOrNot(secondSpot).endsWith("NOT prime")) {
+  while (primeNumberOrNot(secondSpot).endsWith(is.NOT_PRIME)) {
     secondSpot ++;
   }
 
   let thirdSpot = inputNum - 1;
-  while (primeNumberOrNot(thirdSpot).endsWith("NOT prime")) {
+  while (primeNumberOrNot(thirdSpot).endsWith(is.NOT_PRIME)) {
     thirdSpot --;
     if (Object.is(thirdSpot, 0)) {
-      return inputNum + " is a non-good prime";
+      return inputNum + is.NON_GOOD_PRIME;
     }
   }
 
   let fourthSpot = thirdSpot - 1;
-  while (primeNumberOrNot(fourthSpot).endsWith("NOT prime")) {
+  while (primeNumberOrNot(fourthSpot).endsWith(is.NOT_PRIME)) {
     fourthSpot --;
     if (Object.is(fourthSpot, 0)) {
-      return inputNum + " is a non-good prime";
+      return inputNum + is.NON_GOOD_PRIME;
     }
   }
 
   if (Math.pow(inputNum, 2) > (spot * thirdSpot) && Math.pow(inputNum, 2) > (secondSpot * fourthSpot)) {
-    return inputNum + " is a good prime";
+    return inputNum + is.GOOD_PRIME;
   } else {
-    return inputNum + " is a non-good prime";
+    return inputNum + is.NON_GOOD_PRIME;
   }
 };
 
