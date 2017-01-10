@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import ClearLast from './calculatorFunctions/ClearLast';
-import inputCheck from './calculatorFunctions/inputCheck';
 
 const Div = styled.div`
   height: 12%;
@@ -55,5 +54,11 @@ const CalculatorClearbuttons = ({newOutputState, theOutput}) => {
     </Div>
   );
 };
+
+CalculatorClearbuttons.propTypes = {
+  newOutputState: PropTypes.object.isRequired,
+  theOutput: PropTypes.object.isRequired
+};
+
 
 export default CalculatorClearbuttons;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import ClearLast from './frankulatorFunctions/ClearLast';
 
@@ -45,6 +45,11 @@ const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
       <Button onClick={clearLast} >Clear Last</Button>
     </Div>
   );
+};
+
+FrankulatorClearbuttons.propTypes = {
+  theOutput: PropTypes.object.isRequired,
+  newOutputState: PropTypes.object.isRequired
 };
 
 export default FrankulatorClearbuttons;

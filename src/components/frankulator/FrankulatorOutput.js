@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -26,6 +26,10 @@ const FrankulatorOutput = ({theOutput}) => {
       <Output>{theOutput}</Output>
     </Div>
   );
+};
+
+FrankulatorOutput.propTypes = {
+  theOutput: PropTypes.object.isRequired
 };
 
 export default FrankulatorOutput;

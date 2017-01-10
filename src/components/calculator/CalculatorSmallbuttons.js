@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import inputCheck from './calculatorFunctions/inputCheck';
 import Evaluate from './calculatorFunctions/Evaluate';
@@ -51,7 +51,6 @@ const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, ne
 
   const sevenAdd = () =>
     newOutputState(inputCheck(theOutput, '7', impliedOverWrite));
-
   const eightAdd = () =>
     newOutputState(inputCheck(theOutput, '8', impliedOverWrite));
   const nineAdd = () =>
@@ -111,6 +110,13 @@ const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, ne
       </InnerDiv>
     </Div>
   );
+};
+
+CalculatorSmallbuttons.propTypes = {
+  theOutput: PropTypes.object.isRequired,
+  newOutputState: PropTypes.object.isRequired,
+  impliedOverWrite: PropTypes.object.isRequired,
+  newOutputStateOverWrite: PropTypes.object.isRequired
 };
 
 export default CalculatorSmallbuttons;

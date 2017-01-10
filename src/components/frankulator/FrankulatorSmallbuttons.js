@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import allFibonacciBelow from './frankulatorFunctions/allFibonacciBelow';
 import chenPrimeOrNot from './frankulatorFunctions/chenPrimeOrNot';
@@ -51,7 +51,7 @@ const Button = styled.button`
   }
 `;
 
-const FrankulatorSmallbuttons = ({overWrite, theOutput, newOutputState, newOutputStateOverWrite}) => {
+const FrankulatorSmallbuttons = ({theOutput, overWrite, newOutputState, newOutputStateOverWrite}) => {
 
   const sevenAdd = () =>
     newOutputState(inputValidator(theOutput, '7', overWrite));
@@ -140,6 +140,13 @@ const FrankulatorSmallbuttons = ({overWrite, theOutput, newOutputState, newOutpu
       </InnerDiv>
     </div>
   );
+};
+
+FrankulatorSmallbuttons.propTypes = {
+  theOutput: PropTypes.object.isRequired,
+  overWrite: PropTypes.object.isRequired,
+  newOutputState: PropTypes.object.isRequired,
+  newOutputStateOverWrite: PropTypes.object.isRequired
 };
 
 export default FrankulatorSmallbuttons;

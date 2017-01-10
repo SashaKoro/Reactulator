@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -24,6 +24,10 @@ const CalculatorOutput = ({theOutput}) => {
       <Output>{theOutput}</Output>
     </Div>
   );
+};
+
+CalculatorOutput.propTypes = {
+  theOutput: PropTypes.object.isRequired
 };
 
 export default CalculatorOutput;
