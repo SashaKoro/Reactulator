@@ -47,9 +47,4 @@ const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
   );
 };
 
-FrankulatorClearbuttons.propTypes = {
-  theOutput: PropTypes.object.isRequired,
-  newOutputState: PropTypes.object.isRequired
-};
-
 export default FrankulatorClearbuttons;

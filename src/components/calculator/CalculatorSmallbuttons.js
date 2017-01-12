@@ -112,11 +112,4 @@ const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, ne
   );
 };
 
-CalculatorSmallbuttons.propTypes = {
-  theOutput: PropTypes.object.isRequired,
-  newOutputState: PropTypes.object.isRequired,
-  impliedOverWrite: PropTypes.object.isRequired,
-  newOutputStateOverWrite: PropTypes.object.isRequired
-};
-
 export default CalculatorSmallbuttons;

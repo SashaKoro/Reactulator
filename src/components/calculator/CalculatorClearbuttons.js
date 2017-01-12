@@ -41,24 +41,17 @@ const Lastbutton = styled(Allbutton)`
   }
 `;
 
-const CalculatorClearbuttons = ({newOutputState, theOutput}) => {
+const CalculatorClearbuttons = ({theOutput, newOutputState}) => {
 
   const eraseAllInput = () => newOutputState('');
 
   const clearLast = () => newOutputState(ClearLast(theOutput));
-
-  return (
+  return(
     <Div>
       <Allbutton onClick={eraseAllInput} >Clear All</Allbutton>
       <Lastbutton onClick={clearLast} >Clear Last</Lastbutton>
     </Div>
   );
 };
-
-CalculatorClearbuttons.propTypes = {
-  newOutputState: PropTypes.object.isRequired,
-  theOutput: PropTypes.object.isRequired
-};
-
 
 export default CalculatorClearbuttons;

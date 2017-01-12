@@ -14,13 +14,9 @@ const Evaluate = output => {
       return Infinity;
   }
 
-  if (output !== "") {
-    output = eval(output);
-    if (Object.is(output, NaN)) {
-      output = Infinity;
-    }
+  if (output !== "") output = eval(output);
+    if (Object.is(output, NaN)) output = Infinity;
     return output;
-  }
 };
 
 export default Evaluate;

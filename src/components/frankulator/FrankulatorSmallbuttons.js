@@ -142,11 +142,4 @@ const FrankulatorSmallbuttons = ({theOutput, overWrite, newOutputState, newOutpu
   );
 };
 
-FrankulatorSmallbuttons.propTypes = {
-  theOutput: PropTypes.object.isRequired,
-  overWrite: PropTypes.object.isRequired,
-  newOutputState: PropTypes.object.isRequired,
-  newOutputStateOverWrite: PropTypes.object.isRequired
-};
-
 export default FrankulatorSmallbuttons;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import styled from 'styled-components';
 import CalculatorHeader from './CalculatorHeader';
 import CalculatorOutput from './CalculatorOutput';

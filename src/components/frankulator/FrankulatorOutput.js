@@ -28,8 +28,4 @@ const FrankulatorOutput = ({theOutput}) => {
   );
 };
 
-FrankulatorOutput.propTypes = {
-  theOutput: PropTypes.object.isRequired
-};
-
 export default FrankulatorOutput;

@@ -26,8 +26,4 @@ const CalculatorOutput = ({theOutput}) => {
   );
 };
 
-CalculatorOutput.propTypes = {
-  theOutput: PropTypes.object.isRequired
-};
-
 export default CalculatorOutput;

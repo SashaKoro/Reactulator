@@ -3,9 +3,7 @@ import * as is from '../stringConstants/stringConstants';
 
 const largestPrimeFactor = inputNum => {
 
-  if (/[a-z]/i.test(inputNum)) {
-    return inputNum;
-  }
+  if (/[a-z]/i.test(inputNum)) return inputNum;
 
   let lastLargest = is.NO_PRIME_FACTOR, possibleFactor = 2;
   while (possibleFactor <= inputNum / possibleFactor) {
@@ -14,12 +12,9 @@ const largestPrimeFactor = inputNum => {
 
       let largerFactor = (inputNum / possibleFactor);
 
-      if (primeNumberOrNot(possibleFactor).endsWith(is.PRIME)) {
-        lastLargest = possibleFactor;
-      }
-      if (primeNumberOrNot(largerFactor).endsWith(is.PRIME)) {
-        lastLargest = largerFactor;
-      }
+      if (primeNumberOrNot(possibleFactor).endsWith(is.PRIME)) lastLargest = possibleFactor;
+
+      if (primeNumberOrNot(largerFactor).endsWith(is.PRIME)) lastLargest = largerFactor;
     }
     possibleFactor ++;
   }
