@@ -1,13 +1,10 @@
 const factorial = inputNum => {
 
-  switch(true){
-    case (/[a-z]/i.test(inputNum)):
-      return inputNum;
-    case (String(inputNum).length > 3):
-      return "Infinity";
-    case inputNum === 0:
-      return 1;
-  }
+  if (/[a-z]/i.test(inputNum)) return inputNum;
+
+  if (String(inputNum).length > 3) return "Infinity";
+
+  if (inputNum === 0) return 1;
 
   let i = (inputNum - 1);
   while (i > 1) {

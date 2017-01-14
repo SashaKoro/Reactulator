@@ -7,17 +7,13 @@ const semiPrimeOrNot = inputNum => {
 
   let firstFactor = 1;
   while (firstFactor <= inputNum / firstFactor) {
-    if (primeNumberOrNot(firstFactor).endsWith(is.PRIME)) {
-      if (inputNum % firstFactor === 0) {
-        let otherFactor = (inputNum / firstFactor);
-        if(primeNumberOrNot(otherFactor).endsWith(is.PRIME)) {
-          return inputNum + is.SEMIPRIME;
-        }
-      }
+    if (primeNumberOrNot(firstFactor).endsWith(is.PRIME) && inputNum % firstFactor === 0) {
+      let secondFactor = inputNum / firstFactor;
+      if (primeNumberOrNot(secondFactor).endsWith(is.PRIME)) return `${inputNum}${is.SEMIPRIME}`;
     }
     firstFactor ++;
   }
-  return inputNum + is.NOT_SEMIPRIME;
+  return `${inputNum}${is.NOT_SEMIPRIME}`;
 };
 
 export default semiPrimeOrNot;

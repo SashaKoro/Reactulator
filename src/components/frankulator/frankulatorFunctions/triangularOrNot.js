@@ -4,13 +4,13 @@ const triangularOrNot = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) return inputNum;
 
-  let triNum = 1, triAdd = 2;
-  while (inputNum !== triNum) {
-    if (triNum > inputNum) return inputNum + is.NOT_TRI;
-    triNum += triAdd;
-    triAdd ++;
+  let triangularNumber = 0, nextAddition = 1;
+  while (triangularNumber < inputNum) {
+    triangularNumber += nextAddition;
+    nextAddition ++;
   }
-  return inputNum + is.TRI;
+  if (triangularNumber !== inputNum) return `${inputNum}${is.NOT_TRI}`;
+  return `${inputNum}${is.TRI}`;
 };
 
 export default triangularOrNot;

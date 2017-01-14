@@ -5,30 +5,30 @@ const goodPrimeOrNot = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) return inputNum;
 
-  if (primeNumberOrNot(inputNum).endsWith(is.NOT_PRIME)) return inputNum + is.NOT_PRIME;
+  if (primeNumberOrNot(inputNum).endsWith(is.NOT_PRIME)) return `${inputNum}${is.NOT_PRIME}`;
 
-  let spot = inputNum + 1;
-  while (primeNumberOrNot(spot).endsWith(is.NOT_PRIME)) spot++;
+  let primeAbove = inputNum + 1;
+  while (primeNumberOrNot(primeAbove).endsWith(is.NOT_PRIME)) primeAbove++;
 
-  let secondSpot = spot + 1;
-  while (primeNumberOrNot(secondSpot).endsWith(is.NOT_PRIME)) secondSpot ++;
+  let secondPrimeAbove = primeAbove + 1;
+  while (primeNumberOrNot(secondPrimeAbove).endsWith(is.NOT_PRIME)) secondPrimeAbove ++;
 
-  let thirdSpot = inputNum - 1;
-  while (primeNumberOrNot(thirdSpot).endsWith(is.NOT_PRIME)) {
-    thirdSpot --;
-    if (thirdSpot === 0) return inputNum + is.NON_GOOD_PRIME;
+  let primeBelow = inputNum - 1;
+  while (primeNumberOrNot(primeBelow).endsWith(is.NOT_PRIME)) {
+    primeBelow --;
+    if (primeBelow === 0) return `${inputNum}${is.NON_GOOD_PRIME}`;
   }
 
-  let fourthSpot = thirdSpot - 1;
-  while (primeNumberOrNot(fourthSpot).endsWith(is.NOT_PRIME)) {
-    fourthSpot --;
-    if (fourthSpot === 0) return inputNum + is.NON_GOOD_PRIME;
+  let secondPrimeBelow = primeBelow - 1;
+  while (primeNumberOrNot(secondPrimeBelow).endsWith(is.NOT_PRIME)) {
+    secondPrimeBelow --;
+    if (secondPrimeBelow === 0) return `${inputNum}${is.NON_GOOD_PRIME}`;
   }
 
-  if (Math.pow(inputNum, 2) > (spot * thirdSpot) &&
-    Math.pow(inputNum, 2) > (secondSpot * fourthSpot)) {
-    return inputNum + is.GOOD_PRIME;
-  } else return inputNum + is.NON_GOOD_PRIME;
+  if (Math.pow(inputNum, 2) > (primeAbove * primeBelow) &&
+    Math.pow(inputNum, 2) > (secondPrimeAbove * secondPrimeBelow)) {
+    return `${inputNum}${is.GOOD_PRIME}`;
+  } else return `${inputNum}${is.NON_GOOD_PRIME}`;
 };
 
 export default goodPrimeOrNot;
