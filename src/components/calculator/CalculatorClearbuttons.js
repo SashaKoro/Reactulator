@@ -43,6 +43,11 @@ const Lastbutton = styled(Allbutton)`
 
 const CalculatorClearbuttons = ({theOutput, newOutputState}) => {
 
+  CalculatorClearbuttons.propTypes = {
+    theOutput: PropTypes.string,
+    newOutputState: PropTypes.func
+  };
+
   const eraseAllInput = () => newOutputState('');
 
   const clearLast = () => newOutputState(ClearLast(theOutput));

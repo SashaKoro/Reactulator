@@ -19,6 +19,11 @@ const Output = styled.output`
 `;
 
 const CalculatorOutput = ({theOutput}) => {
+
+  CalculatorOutput.propTypes = {
+    theOutput: PropTypes.string.isRequired
+  };
+
   return (
     <Div>
       <Output>{theOutput}</Output>

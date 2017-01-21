@@ -6,8 +6,8 @@ const largestPrimeFactor = inputNum => {
   if (/[a-z]/i.test(inputNum)) return inputNum;
 
   let lastLargest = is.NO_PRIME_FACTOR, possibleFactor = 2;
-  while (possibleFactor <= inputNum / possibleFactor) {
 
+  while (possibleFactor <= inputNum / possibleFactor) {
     if (inputNum % possibleFactor === 0) {
 
       let largerFactor = (inputNum / possibleFactor);

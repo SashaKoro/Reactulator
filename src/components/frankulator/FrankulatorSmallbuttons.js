@@ -57,6 +57,13 @@ const FrankulatorSmallbuttons = ({theOutput, overWrite, newOutputState, newOutpu
 
   const frankulateReturn = (func, validator) => newOutputStateOverWrite(func(validator(theOutput)));
 
+  FrankulatorSmallbuttons.propTypes = {
+    theOutput: PropTypes.string,
+    overWrite: PropTypes.bool,
+    newOutputState: PropTypes.func,
+    newOutputStateOverWrite: PropTypes.func
+  };
+
   return(
     <div>
       <InnerDiv>
@@ -97,5 +104,6 @@ const FrankulatorSmallbuttons = ({theOutput, overWrite, newOutputState, newOutpu
     </div>
   );
 };
+
 
 export default FrankulatorSmallbuttons;

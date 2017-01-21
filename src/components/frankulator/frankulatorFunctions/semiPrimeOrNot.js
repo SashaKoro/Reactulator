@@ -6,10 +6,15 @@ const semiPrimeOrNot = inputNum => {
   if (/[a-z]/i.test(inputNum)) return inputNum;
 
   let firstFactor = 1;
+
   while (firstFactor <= inputNum / firstFactor) {
     if (primeNumberOrNot(firstFactor).endsWith(is.PRIME) && inputNum % firstFactor === 0) {
+
       let secondFactor = inputNum / firstFactor;
-      if (primeNumberOrNot(secondFactor).endsWith(is.PRIME)) return `${inputNum}${is.SEMIPRIME}`;
+
+      if (primeNumberOrNot(secondFactor).endsWith(is.PRIME)) {
+        return `${inputNum}${is.SEMIPRIME}`;
+      }
     }
     firstFactor ++;
   }

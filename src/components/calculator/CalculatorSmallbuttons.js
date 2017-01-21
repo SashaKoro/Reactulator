@@ -53,6 +53,13 @@ const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, ne
 
   const inputEvaluation = () => newOutputStateOverWrite(Evaluate(theOutput));
 
+  CalculatorSmallbuttons.propTypes = {
+    theOutput: PropTypes.string,
+    newOutputState: PropTypes.func,
+    impliedOverWrite: PropTypes.bool,
+    newOutputStateOverWrite: PropTypes.func
+  };
+
   return (
     <Div>
       <InnerDiv>

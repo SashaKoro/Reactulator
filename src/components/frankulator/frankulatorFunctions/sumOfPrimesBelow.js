@@ -10,8 +10,11 @@ const sumOfPrimeBelow = inputNum => {
   if (inputNum < 3) return 0;
 
   let sumOfPrimes = 2, possiblePrime = 3;
+
   while (possiblePrime < inputNum) {
-    if (primeNumberOrNot(possiblePrime).endsWith(is.PRIME)) sumOfPrimes += possiblePrime;
+    if (primeNumberOrNot(possiblePrime).endsWith(is.PRIME)) {
+      sumOfPrimes += possiblePrime;
+    }
     possiblePrime += 2;
   }
   return sumOfPrimes;

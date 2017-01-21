@@ -16,17 +16,22 @@ const goodPrimeOrNot = inputNum => {
   let primeBelow = inputNum - 1;
   while (primeNumberOrNot(primeBelow).endsWith(is.NOT_PRIME)) {
     primeBelow --;
-    if (primeBelow === 0) return `${inputNum}${is.NON_GOOD_PRIME}`;
+    if (primeBelow === 0) {
+      return `${inputNum}${is.NON_GOOD_PRIME}`;
+    }
   }
 
   let secondPrimeBelow = primeBelow - 1;
   while (primeNumberOrNot(secondPrimeBelow).endsWith(is.NOT_PRIME)) {
     secondPrimeBelow --;
-    if (secondPrimeBelow === 0) return `${inputNum}${is.NON_GOOD_PRIME}`;
+    if (secondPrimeBelow === 0) {
+      return `${inputNum}${is.NON_GOOD_PRIME}`;
+    }
   }
 
   return (Math.pow(inputNum, 2) > (primeAbove * primeBelow) &&
-    Math.pow(inputNum, 2) > (secondPrimeAbove * secondPrimeBelow))
+          Math.pow(inputNum, 2) > (secondPrimeAbove * secondPrimeBelow))
+
     ? `${inputNum}${is.GOOD_PRIME}` : `${inputNum}${is.NON_GOOD_PRIME}`;
 };
 

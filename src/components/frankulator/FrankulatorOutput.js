@@ -21,6 +21,11 @@ const Output = styled.output`
 `;
 
 const FrankulatorOutput = ({theOutput}) => {
+
+  FrankulatorOutput.propTypes = {
+    theOutput: PropTypes.string.isRequired
+  };
+
   return(
     <Div>
       <Output>{theOutput}</Output>
