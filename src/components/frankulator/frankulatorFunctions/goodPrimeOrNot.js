@@ -25,10 +25,9 @@ const goodPrimeOrNot = inputNum => {
     if (secondPrimeBelow === 0) return `${inputNum}${is.NON_GOOD_PRIME}`;
   }
 
-  if (Math.pow(inputNum, 2) > (primeAbove * primeBelow) &&
-    Math.pow(inputNum, 2) > (secondPrimeAbove * secondPrimeBelow)) {
-    return `${inputNum}${is.GOOD_PRIME}`;
-  } else return `${inputNum}${is.NON_GOOD_PRIME}`;
+  return (Math.pow(inputNum, 2) > (primeAbove * primeBelow) &&
+    Math.pow(inputNum, 2) > (secondPrimeAbove * secondPrimeBelow))
+    ? `${inputNum}${is.GOOD_PRIME}` : `${inputNum}${is.NON_GOOD_PRIME}`;
 };
 
 export default goodPrimeOrNot;

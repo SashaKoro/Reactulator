@@ -31,15 +31,11 @@ export default class Calculator extends Component {
     this.EvaluateInput = this.EvaluateInput.bind(this);
   }
 
-  Cleared(theOutput){
-    this.setState({theOutput});
-  }
-  NewValueAdded(theOutput){
-    this.setState({theOutput, impliedOverWrite: false});
-  }
-  EvaluateInput(theOutput) {
-    this.setState({theOutput, impliedOverWrite: true});
-  }
+  Cleared(theOutput) { this.setState({theOutput}); }
+
+  NewValueAdded(theOutput) { this.setState({theOutput, impliedOverWrite: false}); }
+
+  EvaluateInput(theOutput) { this.setState({theOutput, impliedOverWrite: true}); }
 
   render() {
     return (

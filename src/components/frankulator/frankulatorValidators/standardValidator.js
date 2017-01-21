@@ -4,9 +4,7 @@ const standardValidator = inputNum => {
 
   if (/[a-z]/i.test(inputNum)) inputNum = "";
 
-  if (inputNum === "") return is.ENTER_A_NUMBER;
-
-  return Number(inputNum);
+  return (inputNum === "") ? is.ENTER_A_NUMBER : Number(inputNum);
 
 };
 

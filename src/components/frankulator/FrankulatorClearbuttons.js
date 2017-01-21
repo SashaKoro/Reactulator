@@ -39,6 +39,7 @@ const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
   const eraseAllInput = () => newOutputState('');
 
   const clearLast = () => newOutputState(ClearLast(theOutput));
+
   return(
     <Div>
       <Button onClick={eraseAllInput} >Clear All</Button>

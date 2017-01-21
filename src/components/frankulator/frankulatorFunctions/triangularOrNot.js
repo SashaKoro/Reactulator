@@ -9,8 +9,7 @@ const triangularOrNot = inputNum => {
     triangularNumber += nextAddition;
     nextAddition ++;
   }
-  if (triangularNumber !== inputNum) return `${inputNum}${is.NOT_TRI}`;
-  return `${inputNum}${is.TRI}`;
+  return (inputNum === triangularNumber) ? `${inputNum}${is.TRI}` : `${inputNum}${is.NOT_TRI}`;
 };
 
 export default triangularOrNot;

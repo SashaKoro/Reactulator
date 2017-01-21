@@ -32,15 +32,11 @@ export default class Frankulator extends Component {
     this.Frankulate = this.Frankulate.bind(this);
   }
 
-  Cleared(theOutput){
-    this.setState({theOutput});
-  }
-  newValueAdded(theOutput){
-    this.setState({theOutput, overWrite: false});
-  }
-  Frankulate(theOutput){
-    this.setState({theOutput, overWrite: true});
-  }
+  Cleared(theOutput) { this.setState({theOutput}); }
+
+  newValueAdded(theOutput) { this.setState({theOutput, overWrite: false}); }
+
+  Frankulate(theOutput) { this.setState({theOutput, overWrite: true}); }
 
   render() {
 
