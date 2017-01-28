@@ -1,6 +1,7 @@
-const woodallNumberOf = inputNum => {
-
-  if (/[a-z]/i.test(inputNum)) return inputNum;
+const woodallNumberOf = (inputNum) => {
+  if (/[a-z]/i.test(inputNum)) {
+    return inputNum;
+  }
 
   return inputNum * Math.pow(2, inputNum) - 1;
 };

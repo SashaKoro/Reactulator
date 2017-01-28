@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes, } from 'react';
 import styled from 'styled-components';
-import ClearLast from './frankulatorFunctions/ClearLast';
+import clearLast from './frankulatorFunctions/ClearLast';
 
 const Div = styled.div`
   height: 50px;
@@ -17,35 +17,33 @@ const Button = styled.button`
   font-family: Arial, sans-serif;
   box-shadow: 3px 5px 3px 0 rgba(0, 0, 0, .5);
   margin-right: 3px;
-  
+
   &:hover {
     background-color: rgb(140,30,30);
     border: rgb(175,0,0);
   }
-    
+
   &:focus {
     outline-color: black;
     outline-style: solid;
     outline-width: 2px;
   }
-  
+
   &:active {
     transform: translateY(3px);
   }
 `;
 
-const FrankulatorClearbuttons = ({theOutput, newOutputState}) => {
-
+const FrankulatorClearbuttons = ({ theOutput, newOutputState, }) => {
   const eraseAllInput = () => newOutputState('');
-
-  const clearLast = () => newOutputState(ClearLast(theOutput));
+  const clearLast = () => newOutputState(clearLast(theOutput));
 
   FrankulatorClearbuttons.propTypes = {
     theOutput: PropTypes.string,
-    newOutputState: PropTypes.func
+    newOutputState: PropTypes.func,
   };
 
-  return(
+  return (
     <Div>
       <Button onClick={eraseAllInput} >Clear All</Button>
       <Button onClick={clearLast} >Clear Last</Button>

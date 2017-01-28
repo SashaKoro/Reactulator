@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes, } from 'react';
 import styled from 'styled-components';
 import allFibonacciBelow from './frankulatorFunctions/allFibonacciBelow';
 import chenPrimeOrNot from './frankulatorFunctions/chenPrimeOrNot';
@@ -35,36 +35,39 @@ const Button = styled.button`
   font-family: Arial, sans-serif;
   box-shadow: 3px 5px 3px 0 rgba(0, 0, 0, .5);
   margin-right: 4px;
-  
+
   &:hover {
     background-color: rgb(150,150,150);
   }
-  
+
   &:focus {
     outline-color: black;
     outline-style: solid;
     outline-width: 2px;
   }
-  
+
   &:active {
     transform: translateY(3px);
   }
 `;
 
-const FrankulatorSmallbuttons = ({theOutput, overWrite, newOutputState, newOutputStateOverWrite}) => {
-
-  const addNumber = inputNum => newOutputState(inputValidator(theOutput, inputNum, overWrite));
-
+const FrankulatorSmallbuttons = ({
+  theOutput,
+  overWrite,
+  newOutputState,
+  newOutputStateOverWrite,
+}) => {
+  const addNumber = (inputNum) => newOutputState(inputValidator(theOutput, inputNum, overWrite));
   const frankulateReturn = (func, validator) => newOutputStateOverWrite(func(validator(theOutput)));
 
   FrankulatorSmallbuttons.propTypes = {
     theOutput: PropTypes.string,
     overWrite: PropTypes.bool,
     newOutputState: PropTypes.func,
-    newOutputStateOverWrite: PropTypes.func
+    newOutputStateOverWrite: PropTypes.func,
   };
 
-  return(
+  return (
     <div>
       <InnerDiv>
         <Button onClick={() => addNumber('7')}>7</Button>

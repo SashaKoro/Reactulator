@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, IndexLink} from 'react-router';
+import { Link, IndexLink, } from 'react-router';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -21,4 +21,3 @@ const Header = () => {
 };
 
 export default Header;
-

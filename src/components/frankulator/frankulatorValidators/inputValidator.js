@@ -1,13 +1,15 @@
 const inputValidator = (output, val, overwrite) => {
+  let newOutput = output.toString();
+  let value = val;
 
-  output = output.toString();
+  if (overwrite || (/^0$/.test(newOutput))) {
+    newOutput = '';
+  }
+  if (newOutput.length > 24) {
+    value = '';
+  }
 
-  if (overwrite || (/^0$/.test(output))) output = "";
-
-  if (output.length > 24) val = "";
-
-  return output + val;
-
+  return newOutput + value;
 };
 
 export default inputValidator;

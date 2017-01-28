@@ -1,24 +1,25 @@
 const inputCheck = (output, val, overwrite) => {
+  let newOutput = output.toString();
+  let value = val;
 
-  output = output.toString();
-
-  switch(true){
-    case (overwrite && (!val.endsWith(" ") && !output.endsWith(" "))):
-    case (/^0$/.test(output) && (val !== "." && !val.endsWith(" "))):
-      output = "";
-      break;
-    case (val === "." && output.endsWith(".")):
-    case (output.endsWith(" 0") && (val !== "." && !val.endsWith(" "))):
-      output = output.slice(0, -1);
-      break;
-    case (val.endsWith(" ") && output.endsWith(" ")):
-      output = output.slice(0, -3);
-      break;
-    case (output.length > 21):
-        val = "";
-        output = "";
+  if (
+    overwrite && (!value.endsWith(' ') && !newOutput.endsWith(' ')) ||
+    /^0$/.test(newOutput) && (value !== '.' && !value.endsWith(' '))
+  ) {
+    newOutput = '';
+  } else if (
+    (value === '.' && newOutput.endsWith('.')) ||
+    (newOutput.endsWith(' 0') && (value !== '.' && !value.endsWith(' ')))
+  ) {
+    newOutput = newOutput.slice(0, -1);
+  } else if (value.endsWith(' ') && newOutput.endsWith(' ')) {
+    newOutput = newOutput.slice(0, -3);
+  } else if (newOutput.length > 21) {
+    value = '';
+    newOutput = '';
   }
-  return output + val;
+
+  return newOutput + value;
 };
 
 export default inputCheck;

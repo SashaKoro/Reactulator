@@ -1,11 +1,10 @@
 import * as is from '../stringConstants/stringConstants';
 
-const standardValidator = inputNum => {
+const standardValidator = (inputNum) => {
+  let input = inputNum;
+  if (/[a-z]/i.test(input)) input = '';
 
-  if (/[a-z]/i.test(inputNum)) inputNum = "";
-
-  return (inputNum === "") ? is.ENTER_A_NUMBER : Number(inputNum);
-
+  return input === '' ? is.ENTER_A_NUMBER : Number(input);
 };
 
 export default standardValidator;

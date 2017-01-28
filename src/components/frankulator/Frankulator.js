@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, } from 'react';
 import styled from 'styled-components';
 import FrankulatorHeader from './FrankulatorHeader';
 import FrankulatorOutput from './FrankulatorOutput';
@@ -19,12 +19,12 @@ const Div = styled.div`
 `;
 
 export default class Frankulator extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
       theOutput: '',
-      overWrite: false
+      overWrite: false,
     };
 
     this.Cleared = this.Cleared.bind(this);
@@ -32,27 +32,33 @@ export default class Frankulator extends Component {
     this.Frankulate = this.Frankulate.bind(this);
   }
 
-  Cleared(theOutput) { this.setState({theOutput}); }
+  Cleared (theOutput) {
+    this.setState({ theOutput, });
+  }
+  newValueAdded (theOutput) {
+    this.setState({ theOutput, overWrite: false, });
+  }
+  Frankulate (theOutput) {
+    this.setState({ theOutput, overWrite: true, });
+  }
 
-  newValueAdded(theOutput) { this.setState({theOutput, overWrite: false}); }
-
-  Frankulate(theOutput) { this.setState({theOutput, overWrite: true}); }
-
-  render() {
-
+  render () {
     return (
       <Div>
         <FrankulatorHeader />
         <FrankulatorOutput
-          theOutput={this.state.theOutput} />
+          theOutput={this.state.theOutput}
+        />
         <FrankulatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.Cleared} />
+          newOutputState={this.Cleared}
+        />
         <FrankulatorSmallbuttons
           theOutput={this.state.theOutput}
           newOutputState={this.newValueAdded}
           newOutputStateOverWrite={this.Frankulate}
-          overWrite={this.state.overWrite} />
+          overWrite={this.state.overWrite}
+        />
         <Conductors />
       </Div>
     );

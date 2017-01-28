@@ -1,7 +1,6 @@
-const ClearLast = output => {
-
-  output = output.toString();
-  return (output.endsWith(' ')) ? output.slice(0, -3) : output.slice(0, -1);
+const clearLast = (output) => {
+  let newOutput = output.toString();
+  return (newOutput.endsWith(' ')) ? newOutput.slice(0, -3) : newOutput.slice(0, -1);
 };
 
-export default ClearLast;
+export default clearLast;

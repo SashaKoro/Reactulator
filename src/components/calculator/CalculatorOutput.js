@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes, } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -18,10 +18,9 @@ const Output = styled.output`
   boxShadow: 0 0 5px 7px rgba(0, 0, 0, .6);
 `;
 
-const CalculatorOutput = ({theOutput}) => {
-
+const CalculatorOutput = ({ theOutput, }) => {
   CalculatorOutput.propTypes = {
-    theOutput: PropTypes.string.isRequired
+    theOutput: PropTypes.string,
   };
 
   return (

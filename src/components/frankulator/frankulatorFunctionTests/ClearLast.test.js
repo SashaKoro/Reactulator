@@ -1,9 +1,9 @@
-import ClearLast from '../frankulatorFunctions/ClearLast';
+import clearLast from '../frankulatorFunctions/ClearLast';
 import expect from 'expect';
 
-describe ('ClearLast', () => {
+describe ('clearLast', () => {
   it('expects to delete the last character from the output', () => {
-    expect(ClearLast('34')).toEqual('3');
-    expect(ClearLast(34)).toEqual('3');
+    expect(clearLast('34')).toEqual('3');
+    expect(clearLast(34)).toEqual('3');
   });
 });

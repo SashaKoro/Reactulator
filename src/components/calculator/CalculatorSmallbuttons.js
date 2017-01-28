@@ -1,7 +1,7 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes, } from 'react';
 import styled from 'styled-components';
 import inputCheck from './calculatorFunctions/inputCheck';
-import Evaluate from './calculatorFunctions/Evaluate';
+import evaluate from './calculatorFunctions/Evaluate';
 
 const Div = styled.div`
   height: 68%;
@@ -22,17 +22,17 @@ const Button = styled.button`
   fontFamily: Arial, sans-serif;
   boxShadow: 4px 5px 3px 0 rgba(0, 0, 0, .5);
   marginRight: 3px;
-  
+
   &:focus {
     outline-color: black;
     outline-style: solid;
     outline-width: 2px;
   }
-  
+
   &:hover {
     background-color: rgb(150,150,150);
   }
-  
+
   &:active {
     transform: translateY(3px);
   }
@@ -41,23 +41,27 @@ const Button = styled.button`
 const EqualButton = styled(Button)`
   background-color: rgb(171, 189, 246);
   border: 3px solid rgb(150,150,246);
-  
+
   &:hover {
     background-color: rgb(150,150,246);
   }
 `;
 
-const CalculatorSmallbuttons = ({theOutput, newOutputState, impliedOverWrite, newOutputStateOverWrite}) => {
+const CalculatorSmallbuttons = ({
+  theOutput,
+  newOutputState,
+  impliedOverWrite,
+  newOutputStateOverWrite,
+}) => {
+  const newInput = (input) => newOutputState(inputCheck(theOutput, input, impliedOverWrite));
 
-  const newInput = input => newOutputState(inputCheck(theOutput, input, impliedOverWrite));
-
-  const inputEvaluation = () => newOutputStateOverWrite(Evaluate(theOutput));
+  const inputEvaluation = () => newOutputStateOverWrite(evaluate(theOutput));
 
   CalculatorSmallbuttons.propTypes = {
     theOutput: PropTypes.string,
     newOutputState: PropTypes.func,
     impliedOverWrite: PropTypes.bool,
-    newOutputStateOverWrite: PropTypes.func
+    newOutputStateOverWrite: PropTypes.func,
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import { Route, IndexRoute, } from 'react-router';
 import App from './components/App';
 import Calculator from './components/calculator/Calculator';
 import Frankulator from './components/frankulator/Frankulator';

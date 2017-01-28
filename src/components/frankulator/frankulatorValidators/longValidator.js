@@ -1,11 +1,12 @@
 import * as is from '../stringConstants/stringConstants';
 
-const longValidator = inputNum => {
+const longValidator = (inputNum) => {
+  let input = inputNum;
+  if (/[a-z]/i.test(input) && !/\+/.test(input)) {
+    input = '';
+  }
 
-  if (/[a-z]/i.test(inputNum) && !/\+/.test(inputNum)) inputNum = '';
-
-  return (inputNum === "") ? is.ENTER_A_NUMBER : Number(inputNum);
-
+  return input === '' ? is.ENTER_A_NUMBER : Number(input);
 };
 
 export default longValidator;

@@ -1,10 +1,9 @@
-import ClearLast from '../calculatorFunctions/ClearLast';
+import clearLast from '../calculatorFunctions/ClearLast';
 import expect from 'expect';
 
-describe('ClearLast', () => {
+describe('clearLast', () => {
   it('expects to correctly clear the last inputted value', () => {
-    expect(ClearLast(123)).toEqual("12");
-    expect(ClearLast('123')).toEqual("12");
-    expect(ClearLast('7 / ')).toEqual("7");
+    expect(clearLast('123')).toEqual('12');
+    expect(clearLast('7 / ')).toEqual('7');
   });
 });

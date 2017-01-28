@@ -1,5 +1,5 @@
-import colors from 'colors';
+/* eslint-disable */ 
 
-/* eslint-disable no-console */    //disables no-console lint rule
+import colors from 'colors';
 
 console.log('Starting app in development mode'.red);

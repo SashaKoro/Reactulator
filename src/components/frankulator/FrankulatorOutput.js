@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes, } from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -20,13 +20,12 @@ const Output = styled.output`
    border-color: black;
 `;
 
-const FrankulatorOutput = ({theOutput}) => {
-
+const FrankulatorOutput = ({ theOutput, }) => {
   FrankulatorOutput.propTypes = {
-    theOutput: PropTypes.string.isRequired
+    theOutput: PropTypes.string.isRequired,
   };
 
-  return(
+  return (
     <Div>
       <Output>{theOutput}</Output>
     </Div>

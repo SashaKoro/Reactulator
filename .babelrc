@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 {
   "presets": ["react", "es2015"],       // Transpiles the ES6 code to ES5
   "env": {

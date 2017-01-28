@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react';
+import React, { PropTypes, Component, } from 'react';
 import Header from './commonComponents/Header';
 import styled from 'styled-components';
 
@@ -8,7 +8,7 @@ const Div = styled.div`
 `;
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <Div className="container-fluid">
         <Header />
@@ -19,7 +19,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
 };
 
 export default App;

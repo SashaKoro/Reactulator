@@ -1,22 +1,23 @@
-const Evaluate = output => {
+const evaluate = (output) => {
+  let newOutput = output.toString();
 
-  output = output.toString();
-
-  switch(true){
-    case output.endsWith(" "):
-    case output.startsWith(" /"):
-    case output.startsWith(" *"):
-    case output.startsWith(". "):
-    case output.endsWith(" ."):
-    case / \. /.test(output):
-      return output;
-    case output === "0 / 0":
-      return Infinity;
+  if (
+    newOutput.endsWith(' ') ||
+    newOutput.startsWith(' /') ||
+    newOutput.startsWith(' *') ||
+    newOutput.startsWith('. ') ||
+    newOutput.endsWith(' .') ||
+    / \. /.test(newOutput)
+  ) {
+    return newOutput;
+  } else if (newOutput === '0 / 0') {
+    return Infinity;
   }
 
-  if (output !== "") output = eval(output);
-  if (Object.is(output, NaN)) output = Infinity;
-  return output;
+  if (newOutput !== '') newOutput = eval(newOutput);
+  if (Object.is(newOutput, NaN)) newOutput = Infinity;
+
+  return String(newOutput);
 };
 
-export default Evaluate;
+export default evaluate;

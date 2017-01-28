@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, } from 'react';
 import styled from 'styled-components';
 import CalculatorHeader from './CalculatorHeader';
 import CalculatorOutput from './CalculatorOutput';
@@ -18,12 +18,12 @@ const Div = styled.div`
 `;
 
 export default class Calculator extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
       theOutput: '',
-      impliedOverWrite: false
+      impliedOverWrite: false,
     };
 
     this.Cleared = this.Cleared.bind(this);
@@ -31,28 +31,36 @@ export default class Calculator extends Component {
     this.EvaluateInput = this.EvaluateInput.bind(this);
   }
 
-  Cleared(theOutput) { this.setState({theOutput}); }
+  Cleared (theOutput) {
+    this.setState({ theOutput, });
+  }
 
-  NewValueAdded(theOutput) { this.setState({theOutput, impliedOverWrite: false}); }
+  NewValueAdded (theOutput) {
+    this.setState({ theOutput, impliedOverWrite: false, });
+  }
 
-  EvaluateInput(theOutput) { this.setState({theOutput, impliedOverWrite: true}); }
+  EvaluateInput (theOutput) {
+    this.setState({ theOutput, impliedOverWrite: true, });
+  }
 
-  render() {
+  render () {
     return (
       <Div>
         <CalculatorHeader />
         <CalculatorOutput
-          theOutput={this.state.theOutput} />
+          theOutput={this.state.theOutput}
+        />
         <CalculatorClearbuttons
           theOutput={this.state.theOutput}
-          newOutputState={this.Cleared} />
+          newOutputState={this.Cleared}
+        />
         <CalculatorSmallbuttons
           theOutput={this.state.theOutput}
           newOutputState={this.NewValueAdded}
           newOutputStateOverWrite={this.EvaluateInput}
-          impliedOverWrite={this.state.impliedOverWrite} />
+          impliedOverWrite={this.state.impliedOverWrite}
+        />
       </Div>
     );
   }
 }
-
