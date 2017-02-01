@@ -36,7 +36,7 @@ const Button = styled.button`
 
 const FrankulatorClearbuttons = ({ theOutput, newOutputState, }) => {
   const eraseAllInput = () => newOutputState('');
-  const clearLast = () => newOutputState(clearLast(theOutput));
+  const eraseLast = () => newOutputState(clearLast(theOutput));
 
   FrankulatorClearbuttons.propTypes = {
     theOutput: PropTypes.string,
@@ -46,7 +46,7 @@ const FrankulatorClearbuttons = ({ theOutput, newOutputState, }) => {
   return (
     <Div>
       <Button onClick={eraseAllInput} >Clear All</Button>
-      <Button onClick={clearLast} >Clear Last</Button>
+      <Button onClick={eraseLast} >Clear Last</Button>
     </Div>
   );
 };
