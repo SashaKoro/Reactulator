@@ -3,7 +3,7 @@ const woodallNumberOf = (inputNum) => {
     return inputNum;
   }
 
-  return inputNum * Math.pow(2, inputNum) - 1;
+  return String(inputNum * Math.pow(2, inputNum) - 1);
 };
 
 export default woodallNumberOf;

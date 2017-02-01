@@ -18,7 +18,7 @@ const collatzStepCount = (inputNum) => {
     stepCount += 1;
   }
 
-  return stepCount;
+  return String(stepCount);
 };
 
 export default collatzStepCount;

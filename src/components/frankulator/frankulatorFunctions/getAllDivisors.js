@@ -19,7 +19,7 @@ const getAllDivisors = (inputNum) => {
     potentialDivisor += 1;
   }
 
-  return divisorCount;
+  return String(divisorCount);
 };
 
 export default getAllDivisors;

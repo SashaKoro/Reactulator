@@ -19,7 +19,7 @@ const largestPrimeFactor = (inputNum) => {
     possibleFactor += 1;
   }
 
-  return lastLargest;
+  return String(lastLargest);
 };
 
 export default largestPrimeFactor;

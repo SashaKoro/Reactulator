@@ -7,7 +7,7 @@ const sumOfPrimeBelow = (inputNum) => {
   } else if (String(inputNum).length > 6) {
     return is.TOO_LONG;
   } else if (inputNum < 3) {
-    return 0;
+    return '0';
   }
 
   let sumOfPrimes = 2;
@@ -18,8 +18,8 @@ const sumOfPrimeBelow = (inputNum) => {
     }
     possiblePrime += 2;
   }
-  
-  return sumOfPrimes;
+
+  return String(sumOfPrimes);
 };
 
 export default sumOfPrimeBelow;

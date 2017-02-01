@@ -9,7 +9,7 @@ const sumOfDigits = (inputNum) => {
     digitSum += parseInt(character);
   }
 
-  return digitSum;
+  return String(digitSum);
 };
 
 export default sumOfDigits;

@@ -5,7 +5,7 @@ const factorial = (inputNum) => {
   } else if (String(input).length > 3) {
     return 'Infinity';
   } else if (input === 0) {
-    return 1;
+    return '1';
   }
 
   let i = (input - 1);
@@ -14,7 +14,7 @@ const factorial = (inputNum) => {
     i -= 1;
   }
 
-  return input;
+  return String(input);
 };
 
 export default factorial;
